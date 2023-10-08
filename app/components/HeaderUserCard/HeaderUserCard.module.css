@@ -68,7 +68,7 @@
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: start;
+    justify-content: flex-start;
 
     transition: var(--hover-transition-duration);
 }
