@@ -1,13 +1,16 @@
 import styles from './page.module.css'
-import LayoutHeader from "@/app/components/LayoutHeader/LayoutHeader";
-import NavigationItem from "@/app/components/NavigationItem/NavigationItem";
-import NavigationMenu from "@/app/components/NavigationMenu/NavigationMenu";
+import Image from "next/image";
+import loginSideImage from '@/public/images/loginSideImage.jpg';
+import LoginForm from "@/app/components/LoginForm/LoginForm";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <LayoutHeader />
-      <NavigationMenu />
+        <Image
+            className={styles.sideImage}
+            src={ loginSideImage }
+            alt={ 'Side Image' }/>
+        <LoginForm />
     </main>
   )
 }

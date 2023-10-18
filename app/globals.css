@@ -13,14 +13,27 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Oldenburg';
+    src: url('/fonts/Oldenburg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --index: calc(1vw + 1vh);
 
     --dark-color: #2e2e2e;
+    --dark-gray: #555555;
+    --hover-light-gray: #c0c0c0;
     --light-gray: #aeb3c3;
     --light-color: #f3f3f3;
     --light-interacted: #ffffff;
+    --dark-main-color: #103362;
     --main-color: #3454D1;
+    --hover-main-color: #5b7ef5;
+    --alternative-main-color: #067BC2;
+    --light-main-color: #ccdef2;
     --application-background-color: #f5f6fa;
 
     --transition-timing-function: cubic-bezier(.8,0,.2,1);
@@ -48,10 +61,20 @@ html, body {
     background-color: var(--application-background-color);
 }
 
-p, span, h1, h2, h3, h4, h5, a {
+p, span, h1, h2, h3, h4, h5, a, label, input {
     color: var(--dark-color);
     font-family: 'Arial', sans-serif;
     text-decoration: none;
 }
 
 button, a { cursor: pointer; }
+
+.pageContentContainer {
+    width: 80%;
+    height: 92%;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: var(--application-background-color);
+}

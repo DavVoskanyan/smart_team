@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  height: calc(var(--index) * 3);
+  height: 8%;
   padding-inline: calc(var(--index) * 2);
 
   background: var(--light-interacted);
@@ -21,4 +21,6 @@
   color: var(--dark-color);
   font-size: calc(var(--index) * 1.5);
   font-family: 'KaushanScript', cursive;
+  cursor: default;
+  user-select: none;
 }

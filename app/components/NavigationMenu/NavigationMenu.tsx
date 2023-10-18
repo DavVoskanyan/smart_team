@@ -5,30 +5,51 @@ import {classNameGenerator} from '@/app/utils/functions';
 import styles from './NavigationMenu.module.css';
 import NavigationItem from "@/app/components/NavigationItem/NavigationItem";
 
-
 export default function NavigationMenu(): JSX.Element {
+
+    type NavigationItemType = {
+        itemName: string,
+        iconFileName: string,
+    }
+
+    const navigationItems: Array<NavigationItemType> = [
+        {
+            itemName: 'dashboard',
+            iconFileName: 'dashboardIcon',
+        },
+        {
+            itemName: 'team',
+            iconFileName: 'teamIcon',
+        },
+        {
+            itemName: 'files',
+            iconFileName: 'filesIcon',
+        },
+        {
+            itemName: 'settings',
+            iconFileName: 'gear',
+        },
+    ];
+
+    const [activeItem, changeActiveItem]:[number, Dispatch<SetStateAction<number>>]
+        = useState(0);
+
     return (
         <nav className={styles.navigationMenu}>
-            <NavigationItem
-                key={1}
-                isActive={true}
-                iconFileName={'dashboardIcon'}
-                itemName={'dashboard'}/>
-            <NavigationItem
-                key={2}
-                isActive={false}
-                iconFileName={'teamIcon'}
-                itemName={'team'}/>
-            <NavigationItem
-                key={3}
-                isActive={false}
-                iconFileName={'filesIcon'}
-                itemName={'files'}/>
-            <NavigationItem
-                key={4}
-                isActive={false}
-                iconFileName={'gear'}
-                itemName={'settings'}/>
+            {
+                navigationItems.map((item: NavigationItemType, index: number): JSX.Element => {
+                    return (
+                        <NavigationItem
+                            key={index}
+                            index={index}
+                            isActive={activeItem === index}
+                            iconFileName={item.iconFileName}
+                            itemName={item.itemName}
+                            changeActiveElement={changeActiveItem}
+                        />
+                    );
+                })
+            }
         </nav>
     );
 }

@@ -1,0 +1,117 @@
+.loginForm {
+    width: 50%;
+    height: 100%;
+    padding-inline: 12.5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formTitle {
+    text-align: center;
+    font-weight: 700;
+}
+.formSubtitle {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+.logoFont {
+    font-family: 'KaushanScript', cursive;
+    font-weight: 400;
+}
+.allInputsContainer {
+    margin-top: 40px;
+}
+.passwordInputContainer {
+    margin-top: 20px;
+}
+.buttonContainer {
+    margin-top: 20px;
+}
+
+.allInputsContainer {
+    width: 100%;
+}
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.inputLabel {
+    color: var(--dark-gray);
+    font-size: 0.9em;
+}
+.mailInput,
+.passwordInput {
+    width: 100%;
+    aspect-ratio: 6;
+    margin-top: 10px;
+    padding-inline: 16px;
+
+    background: var(--light-interacted);
+
+    border: none;
+    border-radius: 16px;
+
+    font-size: 1.3em;
+}
+.passwordInput {
+    letter-spacing: 0.3em;
+}
+.mailInput::placeholder,
+.passwordInput::placeholder {
+    color: var(--hover-light-gray);
+    font-size: 13px;
+    letter-spacing: 0;
+    translate: 0 -2px;
+}
+.iconContainer {
+    width: calc(16.5% - 1px);
+    aspect-ratio: 1;
+
+    background-color: var(--light-gray);
+    border-radius: 15px;
+
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    right: 1px;
+    top: 27px;
+}
+.forgotPassword {
+    margin: 5px 10px 0 0;
+    align-self: flex-end;
+    color: var(--hover-light-gray);
+    font-size: 1em;
+}
+.forgotPassword:hover {
+    text-decoration: underline;
+}
+.buttonContainer {
+    width: 100%;
+}
+.loginButton {
+    width: 100%;
+    aspect-ratio: 6;
+
+    background-color: var(--main-color);
+
+    border: none;
+    border-radius: 9px;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.15);
+
+    color: var(--light-interacted);
+    font-size: 1.3em;
+    font-weight: 700;
+
+    transition: var(--hover-transition-duration) var(--transition-timing-function);
+}
+.loginButton:hover {
+    background-color: var(--hover-main-color);
+}

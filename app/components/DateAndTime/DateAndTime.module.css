@@ -1,0 +1,27 @@
+.dateAndTime {
+    width: calc(var(--index) * 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dateAndTime.withTime .date {
+    width: 100%;
+    color: var(--main-color);
+    text-align: center;
+    font-size: calc(var(--index) * 0.5);
+    font-weight: 700;
+}
+.onlyDate.onlyDate .date {
+    width: 100%;
+    color: var(--main-color);
+    text-align: center;
+    font-size: calc(var(--index) * 0.6);
+    font-weight: 700;
+}
+
+.time {
+    width: 100%;
+    text-align: center;
+    font-size: calc(var(--index) * 0.65);
+    font-weight: 700;
+}
