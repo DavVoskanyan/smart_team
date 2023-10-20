@@ -52,8 +52,6 @@
     height: 100%;
     aspect-ratio: 1;
 
-    background-color: #FF7675;
-
     border-radius: 15px;
 
     display: grid;
@@ -73,3 +71,4 @@
     position: absolute;
     display: none;
 }
+.userImage.hasImage { display: block; }

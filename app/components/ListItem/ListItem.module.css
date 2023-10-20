@@ -17,6 +17,7 @@
     background-color: var(--light-gray);
 }
 .message {
+    width: 70%;
     font-size: calc(var(--index) * 0.6);
 
     display: -webkit-box;

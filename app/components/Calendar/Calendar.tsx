@@ -2,13 +2,12 @@ import {JSX} from 'react';
 import Image from "next/image";
 import styles from './Calendar.module.css';
 
-import {classNameGenerator} from "@/app/utils/functions";
+import {classNameGenerator, dateToStringParser} from "@/app/utils/functions";
+import {DAYS_OF_WEEK_SHORT} from "@/app/utils/constants";
 
 import winterImage from "@/public/images/winterCalendarImage.svg";
 
 export default function Calendar({date}: any): JSX.Element {
-    const monthNamesArray: Array<string> = ["January","February","March","April","May","June","July", "August","September","October","November","December"]
-
     const lastMonthFinalDay: Date = new Date(date.getFullYear(), date.getMonth(), 0);
     const thisMonthFinalDay: Date = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
@@ -38,15 +37,12 @@ export default function Calendar({date}: any): JSX.Element {
 
     return (
         <div className={styles.calendar}>
-            <span className={styles.monthName}>{monthNamesArray[date.getMonth()]}</span>
+            <span className={styles.monthName}>{dateToStringParser(date, "MN", " ")}</span>
             <div className={styles.calendarBody}>
-                <span>MO</span>
-                <span>TU</span>
-                <span>WE</span>
-                <span>TH</span>
-                <span>FR</span>
-                <span>SA</span>
-                <span>SU</span>
+                {
+                    DAYS_OF_WEEK_SHORT
+                    .map((day: string, index: number): JSX.Element => <span className={styles.weekDayName} key={index}>{day}</span>)
+                }
 
                 {daysArray}
             </div>

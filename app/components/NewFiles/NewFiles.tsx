@@ -1,4 +1,5 @@
 import {JSX} from 'react';
+import {NewFilesType} from '@/app/utils/types/propsTypes';
 import Image from "next/image";
 
 import styles from './NewFiles.module.css';
@@ -6,7 +7,7 @@ import styles from './NewFiles.module.css';
 import cameraIcon from '@/public/images/icons/cameraIcon.svg';
 import filesIcon from '@/public/images/icons/filesIcon.svg';
 
-export default function NewFiles(): JSX.Element {
+export default function NewFiles({photosQuantity, documentsQuantity}: NewFilesType): JSX.Element {
     return (
         <div className={styles.newFiles}>
             <h3 className={styles.title}>New Files</h3>
@@ -14,7 +15,7 @@ export default function NewFiles(): JSX.Element {
                 <div className={styles.photosSection}>
                     <div className={styles.textInfo}>
                         <span className={styles.sectionTitle}>Photos</span>
-                        <span className={styles.itemsCount}>124</span>
+                        <span className={styles.itemsCount}>{photosQuantity}</span>
                     </div>
                     <div className={styles.iconContainer}>
                         <Image
@@ -26,7 +27,7 @@ export default function NewFiles(): JSX.Element {
                 <div className={styles.documentsSection}>
                     <div className={styles.textInfo}>
                         <span className={styles.sectionTitle}>Docs</span>
-                        <span className={styles.itemsCount}>14</span>
+                        <span className={styles.itemsCount}>{documentsQuantity}</span>
                     </div>
                     <div className={styles.iconContainer}>
                         <Image

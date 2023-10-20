@@ -24,6 +24,12 @@
     font-size: calc(var(--index) * 0.4);
     text-align: center;
 }
+.monthName {
+    text-transform: capitalize;
+}
+.weekDayName {
+    text-transform: uppercase;
+}
 .calendarDay {
     font-weight: 400;
 }
