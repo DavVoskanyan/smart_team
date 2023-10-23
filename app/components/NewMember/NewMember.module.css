@@ -48,6 +48,23 @@
     font-size: calc(var(--index) * 0.45);
     margin-top: auto;
 }
+.userAvatarContainer {
+    height: 100%;
+    aspect-ratio: 1;
+
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
 .avatarContainer {
     height: 100%;
     aspect-ratio: 1;
@@ -60,11 +77,7 @@
     position: relative;
     overflow: hidden;
 }
-.userInitials {
-    font-size: 3em;
-    color: var(--light-interacted);
-    font-weight: 700;
-}
+
 .userImage {
     width: 100%;
     height: 100%;

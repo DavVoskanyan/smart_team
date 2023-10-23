@@ -36,7 +36,7 @@ export default function Home(): JSX.Element {
             profession: 'Web-Developer',
             avatarImageFileName: null,
             avatarColor: '#FF7675',
-
+            memberLink: '',
         },
         {
             firstName: 'David',
@@ -44,7 +44,7 @@ export default function Home(): JSX.Element {
             profession: 'Web-Developer',
             avatarImageFileName: null,
             avatarColor: '#FF7675',
-
+            memberLink: '',
         },
         {
             firstName: 'David',
@@ -52,7 +52,7 @@ export default function Home(): JSX.Element {
             profession: 'Web-Developer',
             avatarImageFileName: null,
             avatarColor: '#FF7675',
-
+            memberLink: '',
         },
         {
             firstName: 'David',
@@ -60,7 +60,7 @@ export default function Home(): JSX.Element {
             profession: 'Web-Developer',
             avatarImageFileName: null,
             avatarColor: '#FF7675',
-
+            memberLink: '',
         },
     ];
 

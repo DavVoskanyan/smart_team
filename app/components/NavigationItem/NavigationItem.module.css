@@ -16,4 +16,7 @@
     box-shadow: 0 2px 8px 0 rgba(174, 179, 195, 0.50);
 }
 .navigationItem:hover { background-color: var(--application-background-color); }
-.navigationItemText { text-transform: capitalize; }
+.navigationItemText {
+    font-size: calc(var(--index) * 0.65);
+    text-transform: capitalize;
+}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {classNameGenerator} from '@/app/utils/functions';
 import styles from './HeaderUserCard.module.css';
+import UserAvatar from "@/app/components/UserAvatar/UserAvatar";
 
 export default function HeaderUserCard(): JSX.Element {
 
@@ -16,12 +17,11 @@ export default function HeaderUserCard(): JSX.Element {
             <span className={styles.userName}>
                 Ստեփանյան Ջուլիետա
             </span>
-            <Image
-                className={styles.userImage}
-                src={'/images/user.jpg'}
-                alt={'User Image'}
-                width={200}
-                height={200}/>
+
+            <div className={styles.avatarContainer}>
+                <UserAvatar firstName={'David'} lastName={'Voskanyan'} avatarImageFileName={null} avatarColor={'#FF7675'}/>
+            </div>
+
             <Image
                 className={styles.dropdownChevron}
                 src={'/images/icons/chevron.svg'}

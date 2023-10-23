@@ -3,6 +3,7 @@ import {NewMemberType} from '@/app/utils/types/propsTypes';
 import {classNameGenerator, dateToStringParser} from '@/app/utils/functions';
 import Image from "next/image";
 import styles from './NewMember.module.css';
+import UserAvatar from "@/app/components/UserAvatar/UserAvatar";
 
 export default function NewMember({firstName, lastName, profession, avatarImageFileName, avatarColor, joinDate}: NewMemberType): JSX.Element {
     return (
@@ -14,15 +15,15 @@ export default function NewMember({firstName, lastName, profession, avatarImageF
                     <span className={styles.memberPosition}>{profession}</span>
                     <span className={styles.joinDate}>Joined Us - {dateToStringParser(joinDate, "D.M.Y", ".")}</span>
                 </div>
-                <div className={styles.avatarContainer} style={{backgroundColor: avatarColor}}>
-                    <span className={styles.userInitials}>{firstName[0]}{lastName[0]}</span>
-                    <Image
-                        className={classNameGenerator(styles.userImage, avatarImageFileName ? styles.hasImage : '')}
-                        src={`/images/${avatarImageFileName}`}
-                        alt={'user image'}
-                        width={40}
-                        height={40}/>
+
+                <div className={styles.userAvatarContainer}>
+                    <UserAvatar firstName={firstName}
+                                lastName={lastName}
+                                avatarImageFileName={avatarImageFileName}
+                                avatarColor={avatarColor}
+                    />
                 </div>
+
             </div>
         </div>
     );

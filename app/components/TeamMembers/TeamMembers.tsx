@@ -12,7 +12,9 @@ export default function TeamMembers({membersCount, membersList, seeAllLink}: Tea
             <h3 className={styles.title}>Team Members</h3>
             <div className={styles.membersCard}>
                 <div className={styles.inCardHeader}>
-                    <h2><span className={styles.membersCount}>{membersCount}</span> Team Members</h2>
+                    <h2 className={styles.cardTitle}>
+                        <span className={styles.membersCount}>{membersCount}</span> Team Members
+                    </h2>
                     <Link className={styles.seeAllLink} href={seeAllLink}>See All</Link>
                 </div>
                 <div className={styles.membersContainer}>
@@ -25,7 +27,9 @@ export default function TeamMembers({membersCount, membersList, seeAllLink}: Tea
                                                               lastName={member.lastName}
                                                               profession={member.profession}
                                                               avatarColor={member.avatarColor}
-                                                              avatarImageFile={member.avatarImageFile}/>
+                                                              avatarImageFile={member.avatarImageFile}
+                                                              memberLink={member.memberLink}
+                                    />
                                 )
                             })
                     }

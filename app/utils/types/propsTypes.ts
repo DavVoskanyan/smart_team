@@ -22,6 +22,7 @@ export type DashboardMemberComponentType = {
     avatarColor: string,
     //@todo : change type any to the right type for imported SVG file
     avatarImageFile: any,
+    memberLink: string,
 }
 
 export type NewFilesType = {

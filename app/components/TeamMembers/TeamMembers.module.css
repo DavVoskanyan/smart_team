@@ -12,7 +12,39 @@
 .membersCard {
     width: 100%;
     height: calc(100% - 30px);
+    padding: var(--index);
+
     background-color: var(--light-interacted);
 
     border-radius: 15px;
+}
+.inCardHeader {
+    width: 100%;
+    margin-bottom: 5px;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+.cardTitle {
+    padding-inline: calc(var(--index) * 0.4);
+    color: var(--main-color);
+    font-size: calc(var(--index) * 0.8);
+}
+.membersCount {
+    margin-right: calc(var(--index) * 1);
+    color: var(--main-color);
+    font-size: calc(var(--index) * 1.3);
+}
+.seeAllLink {
+    margin-left: auto;
+    color: var(--light-gray);
+    text-transform: capitalize;
+    font-size: calc(var(--index) * 0.5);
+}
+.seeAllLink:hover { text-decoration: underline; }
+
+.membersContainer {
+    width: 100%;
+    height: 90%;
 }
