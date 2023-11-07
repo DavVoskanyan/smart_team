@@ -12,7 +12,7 @@ export default function DashboardMemberComponent({firstName, lastName, professio
             <div className={styles.avatarContainer}>
                 <UserAvatar firstName={firstName}
                             lastName={lastName}
-                            avatarImageFile={avatarImageFile}
+                            avatarImageFileName={avatarImageFile}
                             avatarColor={avatarColor}
                 />
             </div>
