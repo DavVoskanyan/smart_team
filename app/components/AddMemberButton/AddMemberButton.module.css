@@ -1,0 +1,27 @@
+.addMemberButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--index) * 0.5);
+}
+.addMemberButton {
+    width: calc(var(--index) * 1.8);
+    aspect-ratio: 1;
+
+    background-color: var(--main-color);
+
+    border: none;
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    transition: var(--hover-transition-duration);
+}
+.addMemberButton:hover { background-color: var(--hover-main-color); }
+.buttonText {
+    color: var(--dark-color);
+    font-size: calc(var(--index) * 0.9);
+    font-weight: 700;
+    text-transform: uppercase;
+}

@@ -1,0 +1,96 @@
+.memberComponent {
+    width: 100%;
+    aspect-ratio: 5 / 6;
+
+    background-color: var(--light-interacted);
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    position: relative;
+    overflow: hidden;
+    transition: var(--hover-transition-duration);
+}
+.memberComponent.listViewComponent {
+    width: 100%;
+    height: calc(var(--index) * 3.5);
+    padding-inline: calc(var(--index) * 1.5);
+
+    border-radius: 10px;
+
+    flex-direction: row;
+    justify-content: space-between;
+}
+.memberComponent:hover { box-shadow: 4px 4px 10px 0 #C5CEDA; }
+.presenceIndicator {
+    width: calc(var(--index) * 0.5);
+    aspect-ratio: 1;
+
+    background-color: var(--light-gray);
+
+    border-radius: 50%;
+
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.presenceIndicator.online { background-color: var(--is-online-color); }
+.avatarContainer {
+    width: calc(var(--index) * 4);
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+.memberComponent.listViewComponent > .avatarContainer { width: calc(var(--index) * 2.7); }
+.textInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.memberComponent.listViewComponent > .textInfo {
+    align-items: flex-start;
+    margin-inline: calc(var(--index) * 0.5) auto;
+    gap: calc(var(--index) * 0.25);
+}
+.memberName {
+    font-size: calc(var(--index) * 0.8);
+    font-weight: 700;
+}
+.memberName:hover { text-decoration: underline; }
+.memberProfession { font-size: calc(var(--index) * 0.6); }
+.socialsContainer {
+    margin-top: calc(var(--index) * 1.5);
+
+    display: flex;
+    align-items: center;
+    gap: calc(var(--index) * 0.5);
+}
+.memberComponent.listViewComponent > .socialsContainer { margin-top: 0; }
+.socialLink {
+    width: calc(var(--index) * 1.7);
+    aspect-ratio: 1;
+
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    transition: var(--hover-transition-duration);
+}
+.socialIcon, .socialHoveredIcon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transition: var(--hover-transition-duration);
+}
+.socialLink:hover { background-color: var(--main-color); }
+.socialLink:hover > .socialIcon { opacity: 0; }

@@ -35,6 +35,7 @@
     --alternative-main-color: #067BC2;
     --light-main-color: #ccdef2;
     --application-background-color: #f5f6fa;
+    --is-online-color: #33C481;
 
     --transition-timing-function: cubic-bezier(.8,0,.2,1);
 

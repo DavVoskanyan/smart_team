@@ -47,10 +47,22 @@ export type ItemsListType = {
 export type ListItemType = {
     withTime: boolean,
     date: Date,
+    itemBackgroundColor: string,
     message: string,
 }
 
 export type DateAndTimeType = {
     withTime: boolean,
     date: Date,
+}
+
+export type UserAvatarType = {
+    firstName: string,
+    lastName: string,
+    avatarImageFileName: string | null,
+    avatarColor: string,
+}
+
+export type NotificationSidebarType = {
+    itemsList: Array<listItemObjectType>,
 }

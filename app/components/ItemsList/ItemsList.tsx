@@ -27,6 +27,7 @@ export default function ItemsList({itemsArray, iconFileName, title, itemBackgrou
                 {itemsArray.map((item: listItemObjectType, index: number): JSX.Element => {
                     return(
                         <ListItem key={index}
+                                  itemBackgroundColor={itemBackgroundColor}
                                   withTime={withTime}
                                   date={item.date}
                                   message={item.message}/>

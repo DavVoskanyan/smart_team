@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import LayoutHeader from "@/app/components/LayoutHeader/LayoutHeader";
 import NavigationMenu from "@/app/components/NavigationMenu/NavigationMenu";
 import React from 'react';
+import NotificationSidebar from "@/app/components/NotificationSidebar/NotificationSidebar";
 
 export const metadata: Metadata = {
     title: 'SmartTeam',

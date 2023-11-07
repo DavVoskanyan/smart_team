@@ -2,9 +2,10 @@ import {JSX} from "react";
 import styles from "./UserAvatar.module.css";
 import Image from "next/image";
 import {classNameGenerator} from "@/app/utils/functions";
+import {UserAvatarType} from "@/app/utils/types/propsTypes";
 
 
-export default function UserAvatar({firstName, lastName, avatarImageFileName, avatarColor}: any): JSX.Element {
+export default function UserAvatar({firstName, lastName, avatarImageFileName, avatarColor}: UserAvatarType): JSX.Element {
     return (
         <div className={styles.avatarContainer} style={{backgroundColor: avatarColor}}>
             <span className={styles.userInitials}>{firstName[0]}{lastName[0]}</span>
@@ -15,6 +16,7 @@ export default function UserAvatar({firstName, lastName, avatarImageFileName, av
                    width={40}
                    height={40}
             />
+
         </div>
     );
 }

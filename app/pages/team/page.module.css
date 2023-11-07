@@ -1,0 +1,11 @@
+.main {
+    padding: 20px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.teamMembersSection {
+    width: 75%;
+    height: 100%;
+}
