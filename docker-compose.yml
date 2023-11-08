@@ -1,0 +1,42 @@
+version: '3'
+services:
+  # Frontend service using Next.js
+  frontend:
+    build:
+      context: ./clientSide
+#    depends_on:
+#      - backend
+#    environment:
+#      - BACKEND_URL=http://backend:8080
+    networks:
+      smart_team:
+
+  # Backend service using PHP
+#  backend:
+#    build:
+#      context: ./serverSide
+#    ports:
+#      - "8080:80"
+#    depends_on:
+#      - database
+#    networks:
+#      - smart_team
+#
+#  # MariaDB database service
+#  database:
+#    image: mariadb:latest
+#    environment:
+#      MYSQL_ROOT_PASSWORD: examplepassword
+#      MYSQL_DATABASE: mydb
+#      MYSQL_USER: myuser
+#      MYSQL_PASSWORD: mypassword
+#    volumes:
+#      - db-data:/var/lib/mysql
+#    networks:
+#      - smart_team
+#
+#volumes:
+#  db-data:
+
+networks:
+  smart_team:
