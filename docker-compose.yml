@@ -4,15 +4,12 @@ services:
   frontend:
     build:
       context: ./clientSide
-    ports:
-      - "3000"
 #    depends_on:
 #      - backend
 #    environment:
 #      - BACKEND_URL=http://backend:8080
     networks:
-      - app-network
-    image: node
+      smart_team:
 
   # Backend service using PHP
 #  backend:
@@ -23,7 +20,7 @@ services:
 #    depends_on:
 #      - database
 #    networks:
-#      - app-network
+#      - smart_team
 #
 #  # MariaDB database service
 #  database:
@@ -36,10 +33,10 @@ services:
 #    volumes:
 #      - db-data:/var/lib/mysql
 #    networks:
-#      - app-network
+#      - smart_team
 #
 #volumes:
 #  db-data:
 
 networks:
-  app-network:
+  smart_team:
