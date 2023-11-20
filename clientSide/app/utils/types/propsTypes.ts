@@ -66,3 +66,18 @@ export type UserAvatarType = {
 export type NotificationSidebarType = {
     itemsList: Array<listItemObjectType>,
 }
+
+export type AboutMemberInfoCardType = {
+    firstName: string,
+    lastName: string,
+    avatarImageFileName: string,
+    avatarColor: string,
+    profession: string,
+    about: string,
+    joinDate: Date,
+}
+
+export type InfoCardListItem = {
+    iconName: string,
+    info: string,
+}

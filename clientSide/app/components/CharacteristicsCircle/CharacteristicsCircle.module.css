@@ -1,0 +1,79 @@
+.characteristicsCircle {
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    font-size: calc(var(--index) * 0.6);
+    font-weight: 400;
+    text-align: center;
+    white-space: break-spaces;
+}
+.characteristicsCircle.uncolored {
+    background-color: var(--light-interacted);
+
+    border: 1px solid var(--main-color);
+}
+
+.size20 {
+    height: 28%;
+    left: 50%;
+    top: 70%;
+    z-index: var(--characteristics-over-z-index);
+}
+.size40 {
+    height: 33%;
+    left: 50%;
+    top: 3%;
+    z-index: var(--characteristics-over-z-index);
+}
+.size60 {
+    height: 38%;
+    left: 21%;
+    top: 60%;
+    z-index: var(--characteristics-under-z-index);
+}
+.size80 {
+    height: 43%;
+    left: 63%;
+    top: 37%;
+    z-index: var(--characteristics-under-z-index);
+}
+.size100 {
+    height: 48%;
+    left: 18%;
+    top: 1%;
+    z-index: var(--characteristics-over-z-index);
+}
+
+
+.uncolored.point1 {
+    left: 17%;
+    top: 14%;
+    z-index: var(--characteristics-under-z-index);
+}
+.uncolored.point2 {
+    left: 43%;
+    top: 1%;
+    z-index: var(--characteristics-over-z-index);
+}
+.uncolored.point3 {
+    left: 63%;
+    top: 23%;
+    z-index: var(--characteristics-over-z-index);
+}
+.uncolored.point4 {
+    left: 55%;
+    top: 61%;
+    z-index: var(--characteristics-under-z-index);
+}
+.uncolored.point5 {
+    left: 25%;
+    top: 60%;
+    z-index: var(--characteristics-over-z-index);
+}

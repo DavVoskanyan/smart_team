@@ -13,8 +13,8 @@ export default function UserAvatar({firstName, lastName, avatarImageFileName, av
             <Image className={classNameGenerator(styles.userImage, avatarImageFileName ? styles.hasImage : '')}
                    src={`/images/${avatarImageFileName}`}
                    alt={'user image'}
-                   width={40}
-                   height={40}
+                   width={500}
+                   height={500}
             />
 
         </div>

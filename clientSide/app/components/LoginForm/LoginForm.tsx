@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function LoginForm(): JSX.Element {
     function loginButtonCLickHandler(eventObject: any): void {
         eventObject.preventDefault();
-        location.href = 'pages/dashboard/';
+        location.href = '/dashboard';
     }
 
     return (

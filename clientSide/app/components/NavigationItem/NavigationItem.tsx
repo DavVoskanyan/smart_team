@@ -10,7 +10,7 @@ export default function NavigationItem(props: any): JSX.Element {
     return (
         <Link
             className={classNameGenerator(styles.navigationItem, props['isActive'] ? styles.active : '')}
-            href={`/pages/${props.itemName}`}
+            href={`/${props.itemName}`}
             onClick={() => props.changeActiveElement(props.index)}>
 
             <Image
