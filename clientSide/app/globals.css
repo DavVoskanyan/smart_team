@@ -45,7 +45,11 @@
 
     --navigation-z-index: 2;
     --header-z-index: 3;
-    --dropdown-z-index: 4
+    --dropdown-z-index: 4;
+
+    --characteristics-over-z-index: 3;
+    --characteristics-title-z-index: 2;
+    --characteristics-under-z-index: 1;
 }
 
 * {

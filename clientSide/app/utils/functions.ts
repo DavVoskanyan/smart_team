@@ -16,6 +16,8 @@ export function dateToStringParser(date: Date, formatString: string, separator: 
         "m": date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes(),
         "s": date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds(),
     }
-    return formatString.split(separator).map((unit: string): string => formatObject[unit as keyof {}] ).join(separator);
-
+    return formatString
+        .split(separator)
+        .map((unit: string): string => formatObject[unit as keyof {}] )
+        .join(separator);
 }

@@ -2,8 +2,11 @@ version: '3'
 services:
   # Frontend service using Next.js
   frontend:
+    image: node:20
     build:
       context: ./clientSide
+    ports:
+      - "3000:3000"
 #    depends_on:
 #      - backend
 #    environment:
