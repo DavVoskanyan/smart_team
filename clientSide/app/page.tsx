@@ -1,16 +1,9 @@
-import styles from './page.module.css'
-import Image from "next/image";
-import loginSideImage from '@/public/images/loginSideImage.jpg';
-import LoginForm from "@/app/components/LoginForm/LoginForm";
+'use client';
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-        <Image
-            className={styles.sideImage}
-            src={ loginSideImage }
-            alt={ 'Side Image' }/>
-        <LoginForm />
-    </main>
-  )
+import {useRouter} from "next/navigation";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+
+export default function Home(): void {
+  const router: AppRouterInstance = useRouter();
+  router.push('/login');
 }
