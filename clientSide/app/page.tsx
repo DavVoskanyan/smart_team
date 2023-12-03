@@ -1,9 +1,12 @@
 'use client';
 
-import {useRouter} from "next/navigation";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from 'next/navigation';
+import {AppRouterInstance} from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import {useEffect} from 'react';
 
 export default function Home(): void {
   const router: AppRouterInstance = useRouter();
-  router.push('/login');
+  useEffect(() => {
+    router.push('/login');
+  });
 }

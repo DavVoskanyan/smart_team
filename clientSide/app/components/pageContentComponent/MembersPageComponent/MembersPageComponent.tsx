@@ -1,12 +1,12 @@
-import {JSX} from "react";
-import {classNameGenerator} from "@/app/utils/functions";
-import AddMemberButton from "@/app/components/interactiveComponents/AddMemberButton/AddMemberButton";
-import SearchInput from "@/app/components/interactiveComponents/SearchInput/SearchInput";
-import MemberComponent from "@/app/components/listItemComponents/MemberComponent/MemberComponent";
-import FilterLine from "@/app/components/interactiveComponents/FilterLine/FilterLine";
+import React, {JSX} from 'react';
+import {classNameGenerator} from '@/app/utils/functions';
+import AddMemberButton from '@/app/components/interactiveComponents/AddMemberButton/AddMemberButton';
+import SearchInput from '@/app/components/interactiveComponents/SearchInput/SearchInput';
+import MemberComponent from '@/app/components/listItemComponents/MemberComponent/MemberComponent';
+import FilterLine from '@/app/components/interactiveComponents/FilterLine/FilterLine';
 
 import styles from './MembersPageComponent.module.css';
-import {MemberObjectType} from "@/app/utils/types/localUsedTypes";
+import {MemberObjectType} from '@/app/utils/types/localUsedTypes';
 
 
 
