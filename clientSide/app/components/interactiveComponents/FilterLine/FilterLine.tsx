@@ -1,9 +1,9 @@
-import {JSX} from "react";
-import {classNameGenerator} from "@/app/utils/functions";
+import React, {JSX} from 'react';
+import {classNameGenerator} from '@/app/utils/functions';
 import Image from 'next/image';
 
-import gridIcon from '@/public/images/icons/gridIcon.svg';
-import gridIconActive from '@/public/images/icons/gridIconActive.svg';
+import gridIcon from '@/public/images/icons/threeColumnGridIcon.svg';
+import gridIconActive from '@/public/images/icons/threeColumnGridIconActive.svg';
 import listIcon from '@/public/images/icons/listIcon.svg';
 import listIconActive from '@/public/images/icons/listIconActive.svg';
 import chevronIcon from '@/public/images/icons/chevron.svg';

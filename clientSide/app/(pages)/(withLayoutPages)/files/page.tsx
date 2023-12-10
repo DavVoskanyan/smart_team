@@ -3,7 +3,7 @@ import React, {JSX} from 'react';
 import styles from './page.module.css';
 import {classNameGenerator} from '@/app/utils/functions';
 import NotificationSidebar from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar';
-import FilesPageComponent from '@/app/components/pageContentComponent/FilesPageComponent/FilesPageComponent';
+import FoldersPageComponent from '@/app/components/pageContentComponent/FoldersPageComponent/FoldersPageComponent';
 import {listItemObjectType} from '@/app/utils/types/localUsedTypes';
 
 
@@ -49,7 +49,7 @@ export default function Home(): JSX.Element {
 
     return (
         <main className={classNameGenerator(styles.main, 'pageContentContainer')}>
-            <FilesPageComponent foldersArray={foldersArray}/>
+            <FoldersPageComponent foldersArray={foldersArray}/>
             <NotificationSidebar itemsList={itemsList}/>
         </main>
     );
