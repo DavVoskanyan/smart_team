@@ -1,10 +1,9 @@
-import {JSX} from 'react';
-import Image from "next/image";
-import Link from "next/link";
-import {TeamMembersType} from "@/app/utils/types/propsTypes";
+import React, {JSX} from 'react';
+import Link from 'next/link';
+import {TeamMembersType} from '@/app/utils/types/propsTypes';
 
 import styles from './TeamMembers.module.css';
-import DashboardMemberComponent from "@/app/components/decorativeComponents/DashboardMemberComponent/DashboardMemberComponent";
+import DashboardMemberComponent from '@/app/components/decorativeComponents/DashboardMemberComponent/DashboardMemberComponent';
 
 export default function TeamMembers({membersCount, membersList, seeAllLink}: TeamMembersType): JSX.Element {
     return (
@@ -30,7 +29,7 @@ export default function TeamMembers({membersCount, membersList, seeAllLink}: Tea
                                                               avatarImageFile={member.avatarImageFile}
                                                               memberLink={member.memberLink}
                                     />
-                                )
+                                );
                             })
                     }
 

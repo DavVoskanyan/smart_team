@@ -1,45 +1,31 @@
+import React from 'react';
 import styles from './page.module.css';
 import {JSX} from 'react';
 
-import NotificationSidebar from "@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar";
-import AboutMemberInfoCard from "@/app/components/containerComponents/AboutMemberInfoCard/AboutMemberInfoCard";
-import SmallMemberInfoCard from "@/app/components/containerComponents/SmallMemberInfoCard/SmallMemberInfoCard";
-import MemberInfoList from "@/app/components/listComponents/MemberInfoList/MemberInfoList";
+import NotificationSidebar from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar';
+import MemberInfoPageComponent from '@/app/components/pageContentComponent/MemberInfoPageComponent/MemberInfoPageComponent';
 
-import {listItemObjectType} from "@/app/utils/types/localUsedTypes";
-import {classNameGenerator} from "@/app/utils/functions";
-import CharacteristicsComponent from "@/app/components/listComponents/CharacteristicsComponent/CharacteristicsComponent";
-import MemberExperienceList from "@/app/components/listComponents/MemberExperienceList/MemberExperienceList";
+import {listItemObjectType} from '@/app/utils/types/localUsedTypes';
+import {classNameGenerator} from '@/app/utils/functions';
 
-export default function Home(props: any): JSX.Element {
-    const currentDate: Date = new Date();
-    const itemsList: Array<listItemObjectType> = [
-        {
-            date: currentDate,
-            message: 'Աղջիկներ պետք է 15:00-ի համար սեղան պատրաստել'
-        },
-        {
-            date: currentDate,
-            message: 'Hello World'
-        }
-    ];
-    const userText: string = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+export default function Home(): JSX.Element {
+    const userDescription: string = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.';
     const infoArray: Array<any> = [
         {
-            iconName: "phoneIcon",
-            info: "+374 94 00 00 00",
+            iconName: 'phoneIcon',
+            info: '+374 94 00 00 00',
         },
         {
-            iconName: "mailIcon",
-            info: "julieta.s@smp.am",
+            iconName: 'mailIcon',
+            info: 'julieta.s@smp.am',
         },
         {
-            iconName: "locationIcon",
-            info: "Yerevan, Armenia",
+            iconName: 'locationIcon',
+            info: 'Yerevan, Armenia',
         },
         {
-            iconName: "birthdayIcon",
-            info: "12 / 01 / 1997",
+            iconName: 'birthdayIcon',
+            info: '12 / 01 / 1997',
         }
     ];
     const experienceArray: Array<any> = [
@@ -66,96 +52,82 @@ export default function Home(props: any): JSX.Element {
     ];
     const pointObjectArray1: Array<any> = [
         {
-            title: "Dancing",
+            title: 'Dancing',
             percent: 20,
             color: '#FFD6D6',
         },
         {
-            title: "Reading",
+            title: 'Reading',
             percent: 80,
             color: '#CBF3F0',
         },
         {
-            title: "Painting",
+            title: 'Painting',
             percent: 60,
             color: '#FBFFB9',
         },
         {
-            title: "Listen music",
+            title: 'Listen music',
             percent: 100,
             color: '#D1F5BE',
         },
         {
-            title: "Singing",
+            title: 'Singing',
             percent: 40,
             color: '#FFF4E4',
         },
     ];
     const pointObjectArray2: Array<any> = [
         {
-            title: "Dancing",
+            title: 'Dancing',
             percent: 60,
             color: null,
         },
         {
-            title: "Reading",
+            title: 'Reading',
             percent: 60,
             color: null,
         },
         {
-            title: "Painting",
+            title: 'Painting',
             percent: 60,
             color: null,
         },
         {
-            title: "Listen music",
+            title: 'Listen music',
             percent: 60,
             color: null,
         },
         {
-            title: "Singing",
+            title: 'Singing',
             percent: 60,
             color: null,
         },
+    ];
+
+    const currentDate: Date = new Date();
+    const itemsList: Array<listItemObjectType> = [
+        {
+            date: currentDate,
+            message: 'Աղջիկներ պետք է 15:00-ի համար սեղան պատրաստել'
+        },
+        {
+            date: currentDate,
+            message: 'Hello World'
+        }
     ];
 
 
 
     return (
         <main className={classNameGenerator(styles.main, 'pageContentContainer')}>
-            <div className={styles.memberInfoSection}>
-                <AboutMemberInfoCard
-                    firstName={"Narek"}
-                    lastName={"Harutunyan"}
-                    avatarImageFileName={'user.jpg'}
-                    avatarColor={"#FABE7A"}
-                    profession={"Backend developer"}
-                    about={userText}
-                    joinDate={new Date()}
-                />
 
-                <SmallMemberInfoCard cardTitle={'Basic information'}>
-                    <MemberInfoList infoArray={infoArray}/>
-                </SmallMemberInfoCard>
+            <MemberInfoPageComponent userDescription={userDescription}
+                                     infoArray={infoArray}
+                                     experienceArray={experienceArray}
+                                     pointObjectArray1={pointObjectArray1}
+                                     pointObjectArray2={pointObjectArray2} />
 
-                <SmallMemberInfoCard cardTitle={'Work experience'}>
-                    <MemberExperienceList experienceArray={experienceArray}/>
-                </SmallMemberInfoCard>
-
-                <SmallMemberInfoCard cardTitle={'My Interests'}>
-                    <CharacteristicsComponent
-                        pointObjectArray={pointObjectArray1}
-                        mainCircleTitle={'interests'}
-                    />
-                </SmallMemberInfoCard>
-
-                <SmallMemberInfoCard cardTitle={'Trait of character'}>
-                    <CharacteristicsComponent
-                        pointObjectArray={pointObjectArray2}
-                        mainCircleTitle={'character'}
-                    />
-                </SmallMemberInfoCard>
-            </div>
             <NotificationSidebar itemsList={itemsList}/>
         </main>
     );

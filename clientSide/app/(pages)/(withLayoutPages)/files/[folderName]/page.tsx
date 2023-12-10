@@ -1,10 +1,11 @@
 import React, {JSX} from 'react';
 
-import styles from './page.module.css';
 import {classNameGenerator} from '@/app/utils/functions';
+import FilesPageComponent from '@/app/components/pageContentComponent/FilesPageComponent/FilesPageComponent';
 import NotificationSidebar from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar';
-import FoldersPageComponent from '@/app/components/pageContentComponent/FoldersPageComponent/FoldersPageComponent';
 import {listItemObjectType} from '@/app/utils/types/localUsedTypes';
+
+import styles from './page.module.css';
 
 
 export default function Home(): JSX.Element {
@@ -19,37 +20,43 @@ export default function Home(): JSX.Element {
             message: 'Hello World'
         }
     ];
-    const foldersArray: Array<object> = [
+    const filesArray: Array<object> = [
         {
-            folderName: 'Documents',
-            filesQuantity: 120,
-            folderUrlName: 'documents',
+            fileName: 'testImage.jpeg',
         },
         {
-            folderName: 'Documents',
-            filesQuantity: 10,
-            folderUrlName: 'documents',
+            fileName: 'testImage.jpeg',
         },
         {
-            folderName: 'Documents',
-            filesQuantity: 8,
-            folderUrlName: 'documents',
+            fileName: 'testImage.jpeg',
         },
         {
-            folderName: 'Documents',
-            filesQuantity: 105,
-            folderUrlName: 'documents',
+            fileName: 'testImage.jpeg',
         },
         {
-            folderName: 'Documents',
-            filesQuantity: 2041,
-            folderUrlName: 'documents',
+            fileName: 'testImage.jpeg',
+        },
+        {
+            fileName: 'testImage.jpeg',
+        },
+        {
+            fileName: 'testImage.jpeg',
+        },
+        {
+            fileName: 'testImage.jpeg',
+        },
+        {
+            fileName: 'testImage.jpeg',
+        },
+        {
+            fileName: 'testImage.jpeg',
         },
     ];
 
+
     return (
         <main className={classNameGenerator(styles.main, 'pageContentContainer')}>
-            <FoldersPageComponent foldersArray={foldersArray}/>
+            <FilesPageComponent filesArray={filesArray}/>
             <NotificationSidebar itemsList={itemsList}/>
         </main>
     );
