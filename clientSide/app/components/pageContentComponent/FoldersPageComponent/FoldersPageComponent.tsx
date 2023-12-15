@@ -1,10 +1,14 @@
-import React, {JSX} from 'react';
+import React from 'react';
+import FoldersPageComponentType from './FoldersPageComponentType';
 
 import FolderComponent from '@/app/components/listComponents/FolderComponent/FolderComponent';
 
 import styles from './FoldersPageComponent.module.css';
+import FolderComponentType from '@/app/components/listComponents/FolderComponent/FolderComponentType';
 
-export default function FoldersPageComponent({foldersArray}: {foldersArray: Array<object>}): JSX.Element {
+const FoldersPageComponent: React.FC<FoldersPageComponentType> = (
+    {foldersArray}: FoldersPageComponentType
+): React.ReactElement => {
     return (
         <div className={styles.foldersPageComponent}>
             <div className={styles.headerContainer}>
@@ -15,16 +19,19 @@ export default function FoldersPageComponent({foldersArray}: {foldersArray: Arra
             </div>
             <div className={styles.foldersGrid}>
                 {
-                    foldersArray.map((folder: any, index: number): JSX.Element => {
+                    foldersArray.map((folder: FolderComponentType, index: number): React.ReactElement => {
                         return (
                             <FolderComponent key={index}
                                              folderName={folder.folderName}
                                              filesQuantity={folder.filesQuantity}
-                                             folderUrlName={folder.folderUrlName}/>
+                                             folderUrlName={folder.folderUrlName}
+                            />
                         );
                     })
                 }
             </div>
         </div>
     );
-}
+};
+
+export default FoldersPageComponent;

@@ -73,24 +73,3 @@
     gap: calc(var(--index) * 0.5);
 }
 .memberComponent.listViewComponent > .socialsContainer { margin-top: 0; }
-.socialLink {
-    width: calc(var(--index) * 1.7);
-    aspect-ratio: 1;
-
-    border: 1px solid var(--main-color);
-    border-radius: 50%;
-
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    transition: var(--hover-transition-duration);
-}
-.socialIcon, .socialHoveredIcon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    transition: var(--hover-transition-duration);
-}
-.socialLink:hover { background-color: var(--main-color); }
-.socialLink:hover > .socialIcon { opacity: 0; }

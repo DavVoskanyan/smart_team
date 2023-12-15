@@ -1,4 +1,5 @@
-import React, {JSX} from 'react';
+import React from 'react';
+import FilterLineType from './FilterLineType';
 import {classNameGenerator} from '@/app/utils/functions';
 import Image from 'next/image';
 
@@ -10,7 +11,7 @@ import chevronIcon from '@/public/images/icons/chevron.svg';
 
 import styles from './FilterLine.module.css';
 
-export default function FilterLine(): JSX.Element {
+const FilterLine: React.FC<FilterLineType> = (): React.ReactElement => {
     return (
         <div className={styles.filterLine}>
             <button className={classNameGenerator(styles.allMembersButton, styles.active)}>all members</button>
@@ -49,4 +50,6 @@ export default function FilterLine(): JSX.Element {
             </div>
         </div>
     );
-}
+};
+
+export default FilterLine;

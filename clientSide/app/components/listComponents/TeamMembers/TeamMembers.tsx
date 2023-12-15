@@ -1,11 +1,15 @@
-import React, {JSX} from 'react';
+import React from 'react';
+import TeamMembersType from './TeamMembersType';
 import Link from 'next/link';
-import {TeamMembersType} from '@/app/utils/types/propsTypes';
 
 import styles from './TeamMembers.module.css';
 import DashboardMemberComponent from '@/app/components/decorativeComponents/DashboardMemberComponent/DashboardMemberComponent';
+import DashboardMemberComponentType
+    from '@/app/components/decorativeComponents/DashboardMemberComponent/DashboardMemberComponentType';
 
-export default function TeamMembers({membersCount, membersList, seeAllLink}: TeamMembersType): JSX.Element {
+const TeamMembers: React.FC<TeamMembersType> = (
+    {membersCount, membersList, seeAllLink}: TeamMembersType
+): React.ReactElement => {
     return (
         <div className={styles.teamMember}>
             <h3 className={styles.title}>Team Members</h3>
@@ -19,7 +23,7 @@ export default function TeamMembers({membersCount, membersList, seeAllLink}: Tea
                 <div className={styles.membersContainer}>
                     {
                         membersList
-                            .map((member: any, index: number): JSX.Element => {
+                            .map((member: DashboardMemberComponentType, index: number): JSX.Element => {
                                 return (
                                     <DashboardMemberComponent key={index}
                                                               firstName={member.firstName}
@@ -37,4 +41,6 @@ export default function TeamMembers({membersCount, membersList, seeAllLink}: Tea
             </div>
         </div>
     );
-}
+};
+
+export default TeamMembers;

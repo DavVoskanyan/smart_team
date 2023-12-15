@@ -1,8 +1,8 @@
-import React, {JSX} from 'react';
+import React from 'react';
+import FilesFilterLineType from './FilesFilterLineType';
 import {classNameGenerator} from '@/app/utils/functions';
 import Image from 'next/image';
 import Link from 'next/link';
-
 
 import linkChevronIcon from '@/public/images/icons/linkChevron.svg';
 import optionsIcon from '@/public/images/icons/optionsIcon.svg';
@@ -18,7 +18,9 @@ import grayChevronIcon from '@/public/images/icons/grayChevronIcon.svg';
 
 import styles from './FilesFilterLine.module.css';
 
-export default function FilesFilterLine({folderName}: any): JSX.Element {
+const FilesFilterLine: React.FC<FilesFilterLineType> = (
+    {folderName}: FilesFilterLineType
+): React.ReactElement => {
     return (
         <div className={styles.filesFilterLine}>
             <Link className={styles.linkToFoldersPage} href={'/files'}>
@@ -80,4 +82,6 @@ export default function FilesFilterLine({folderName}: any): JSX.Element {
             </div>
         </div>
     );
-}
+};
+
+export default FilesFilterLine;

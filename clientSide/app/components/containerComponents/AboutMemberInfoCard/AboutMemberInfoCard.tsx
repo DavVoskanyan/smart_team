@@ -1,13 +1,12 @@
-import {JSX} from 'react';
-import {dateToStringParser} from "@/app/utils/functions";
-import UserAvatar from "@/app/components/decorativeComponents/UserAvatar/UserAvatar";
+import React from 'react';
+import {dateToStringParser} from '@/app/utils/functions';
+import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
 import styles from './AboutMemberInfoCard.module.css';
-import {AboutMemberInfoCardType} from "@/app/utils/types/propsTypes";
+import AboutMemberInfoCardType from './AboutMemberInfoCardType';
 
-export default function AboutMemberInfoCard(
+const AboutMemberInfoCard: React.FC<AboutMemberInfoCardType> = (
     { firstName, lastName, avatarImageFileName, avatarColor, profession, about, joinDate }: AboutMemberInfoCardType
-): JSX.Element {
-
+): React.ReactElement => {
     return (
         <div className={styles.aboutMemberInfoCard}>
             <div className={styles.avatarContainer}>
@@ -32,4 +31,6 @@ export default function AboutMemberInfoCard(
             </div>
         </div>
     );
-}
+};
+
+export default AboutMemberInfoCard;

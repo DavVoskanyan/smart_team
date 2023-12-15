@@ -1,12 +1,14 @@
-import {JSX} from 'react';
-import Image from "next/image";
-import Link from "next/link";
-import {DashboardMemberComponentType} from "@/app/utils/types/propsTypes";
-import styles from './DashboardMemberComponent.module.css';
-import UserAvatar from "@/app/components/decorativeComponents/UserAvatar/UserAvatar";
+import React from 'react';
+import Link from 'next/link';
 
-export default function DashboardMemberComponent({firstName, lastName, profession, avatarColor, avatarImageFile, memberLink}:
-    DashboardMemberComponentType): JSX.Element {
+import DashboardMemberComponentType from './DashboardMemberComponentType';
+import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
+
+import styles from './DashboardMemberComponent.module.css';
+
+const DashboardMemberComponent: React.FC<DashboardMemberComponentType> = (
+    {firstName, lastName, profession, avatarColor, avatarImageFile, memberLink}: DashboardMemberComponentType
+): React.ReactElement => {
     return (
         <div className={styles.dashboardMemberContainer}>
             <div className={styles.avatarContainer}>
@@ -22,4 +24,6 @@ export default function DashboardMemberComponent({firstName, lastName, professio
             </div>
         </div>
     );
-}
+};
+
+export default DashboardMemberComponent;

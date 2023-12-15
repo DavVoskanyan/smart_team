@@ -1,9 +1,12 @@
-import {JSX} from 'react';
-import {dateToStringParser} from "@/app/utils/functions";
+import React from 'react';
+import ExperienceCardListItemType from './ExperienceCardListItemType';
+import {dateToStringParser} from '@/app/utils/functions';
 
 import styles from './ExperienceCardListItem.module.css';
 
-export default function ExperienceCardListItem({workStartDate, workPlaceName, position}: any): JSX.Element {
+const ExperienceCardListItem: React.FC<ExperienceCardListItemType> = (
+    {workStartDate, workPlaceName, position}: ExperienceCardListItemType
+): React.ReactElement => {
     return (
         <div className={styles.experienceCardListItem}>
             <span className={styles.year}>{dateToStringParser(workStartDate, 'Y', '')}</span>
@@ -14,4 +17,6 @@ export default function ExperienceCardListItem({workStartDate, workPlaceName, po
             </div>
         </div>
     );
-}
+};
+
+export default ExperienceCardListItem;

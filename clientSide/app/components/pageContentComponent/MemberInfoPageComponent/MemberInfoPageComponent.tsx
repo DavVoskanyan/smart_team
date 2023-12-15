@@ -1,5 +1,5 @@
 import React from 'react';
-import {JSX} from 'react';
+import MemberInfoPageComponentType from './MemberInfoPageComponentType';
 import styles from  './MemberInfoPageComponent.module.css';
 
 import AboutMemberInfoCard from '@/app/components/containerComponents/AboutMemberInfoCard/AboutMemberInfoCard';
@@ -8,14 +8,9 @@ import MemberInfoList from '@/app/components/listComponents/MemberInfoList/Membe
 import MemberExperienceList from '@/app/components/listComponents/MemberExperienceList/MemberExperienceList';
 import CharacteristicsComponent from '@/app/components/listComponents/CharacteristicsComponent/CharacteristicsComponent';
 
-export default function MemberInfoPageContent(
-    {
-        userDescription,
-        infoArray,
-        experienceArray,
-        pointObjectArray1,
-        pointObjectArray2
-    }: any): JSX.Element {
+const MemberInfoPageComponent: React.FC<MemberInfoPageComponentType> = (
+    { userDescription, infoArray, experienceArray, pointObjectArray1, pointObjectArray2 }: MemberInfoPageComponentType
+): React.ReactElement => {
 
     return (
         <div className={styles.memberInfoPageComponent}>
@@ -52,4 +47,6 @@ export default function MemberInfoPageContent(
             </SmallMemberInfoCard>
         </div>
     );
-}
+};
+
+export default MemberInfoPageComponent;

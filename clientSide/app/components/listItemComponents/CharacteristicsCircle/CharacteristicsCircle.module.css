@@ -52,27 +52,27 @@
 }
 
 
-.uncolored.point1 {
+.uncolored.characteristicsCircle:nth-child(2) {
     left: 17%;
     top: 14%;
     z-index: var(--characteristics-under-z-index);
 }
-.uncolored.point2 {
+.uncolored.characteristicsCircle:nth-child(3) {
     left: 43%;
     top: 1%;
     z-index: var(--characteristics-over-z-index);
 }
-.uncolored.point3 {
+.uncolored.characteristicsCircle:nth-child(4) {
     left: 63%;
     top: 23%;
     z-index: var(--characteristics-over-z-index);
 }
-.uncolored.point4 {
+.uncolored.characteristicsCircle:nth-child(5) {
     left: 55%;
     top: 61%;
     z-index: var(--characteristics-under-z-index);
 }
-.uncolored.point5 {
+.uncolored.characteristicsCircle:nth-child(6) {
     left: 25%;
     top: 60%;
     z-index: var(--characteristics-over-z-index);

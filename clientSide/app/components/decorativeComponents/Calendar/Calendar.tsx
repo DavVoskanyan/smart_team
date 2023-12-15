@@ -1,13 +1,16 @@
-import {JSX} from 'react';
-import Image from "next/image";
+import React from 'react';
+import CalendarType from './CalendarType';
+import Image from 'next/image';
+
+import {classNameGenerator, dateToStringParser} from '@/app/utils/functions';
+import {DAYS_OF_WEEK_SHORT} from '@/app/utils/constants';
+
 import styles from './Calendar.module.css';
+import winterImage from '@/public/images/winterCalendarImage.svg';
 
-import {classNameGenerator, dateToStringParser} from "@/app/utils/functions";
-import {DAYS_OF_WEEK_SHORT} from "@/app/utils/constants";
-
-import winterImage from "@/public/images/winterCalendarImage.svg";
-
-export default function Calendar({date}: any): JSX.Element {
+const Calendar: React.FC<CalendarType> = (
+    {date}: CalendarType
+): React.ReactElement => {
     const lastMonthFinalDay: Date = new Date(date.getFullYear(), date.getMonth(), 0);
     const thisMonthFinalDay: Date = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
@@ -37,7 +40,7 @@ export default function Calendar({date}: any): JSX.Element {
 
     return (
         <div className={styles.calendar}>
-            <span className={styles.monthName}>{dateToStringParser(date, "MN", " ")}</span>
+            <span className={styles.monthName}>{dateToStringParser(date, 'MN', ' ')}</span>
             <div className={styles.calendarBody}>
                 {
                     DAYS_OF_WEEK_SHORT
@@ -49,4 +52,6 @@ export default function Calendar({date}: any): JSX.Element {
             <Image className={styles.seasonImage} src={winterImage} alt={'winter'}/>
         </div>
     );
-}
+};
+
+export default Calendar;

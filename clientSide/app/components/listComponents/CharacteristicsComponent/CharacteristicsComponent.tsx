@@ -1,19 +1,21 @@
-import {JSX} from 'react';
+import React from 'react';
+import CharacteristicsComponentType from './CharacteristicsComponentType';
 import styles from './CharacteristicsComponent.module.css';
-import CharacteristicsCircle from "@/app/components/listItemComponents/CharacteristicsCircle/CharacteristicsCircle";
-
-export default function CharacteristicsComponent({mainCircleTitle, pointObjectArray}: any): JSX.Element {
+import CharacteristicsCircle from '@/app/components/listItemComponents/CharacteristicsCircle/CharacteristicsCircle';
+import CharacteristicsCircleType from '@/app/components/listItemComponents/CharacteristicsCircle/CharacteristicsCircleType';
+const CharacteristicsComponent: React.FC<CharacteristicsComponentType> = (
+    {mainCircleTitle, pointObjectArray}: CharacteristicsComponentType
+): React.ReactElement => {
     return(
         <div className={styles.characteristicsComponent}>
             <div className={styles.titleCircle}>
                 {mainCircleTitle}
             </div>
             {
-                pointObjectArray.map((pointObject: any, index: number) => {
+                pointObjectArray.map((pointObject: CharacteristicsCircleType, index: number) => {
                     return (
                         <CharacteristicsCircle
                             key={index}
-                            index={index + 1}
                             title={pointObject.title}
                             percent={pointObject.percent}
                             color={pointObject.color}
@@ -23,4 +25,6 @@ export default function CharacteristicsComponent({mainCircleTitle, pointObjectAr
             }
         </div>
     );
-}
+};
+
+export default CharacteristicsComponent;

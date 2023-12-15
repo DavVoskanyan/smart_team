@@ -1,15 +1,17 @@
-import {JSX} from 'react';
+import React from 'react';
 import styles from './NotificationSidebar.module.css';
-import ItemsList from "@/app/components/listComponents/ItemsList/ItemsList";
-import ringIcon from "@/public/images/icons/ringIcon.svg";
-import meetIcon from "@/public/images/icons/meetIcon.svg";
-import {NotificationSidebarType} from "@/app/utils/types/propsTypes";
+import ItemsList from '@/app/components/listComponents/ItemsList/ItemsList';
+import ringIcon from '@/public/images/icons/ringIcon.svg';
+import meetIcon from '@/public/images/icons/meetIcon.svg';
+import NotificationSidebarType from './NotificationSidebarType';
 
-export default function NotificationSidebar({itemsList}: NotificationSidebarType): JSX.Element {
+const NotificationSidebar: React.FC<NotificationSidebarType> = (
+    {notificationsArray, meetingsArray, upcomingBirthdaysArray}: NotificationSidebarType
+): React.ReactElement => {
     return (
         <div className={styles.notificationSidebar}>
 
-            <ItemsList itemsArray={itemsList}
+            <ItemsList itemsArray={notificationsArray}
                        iconFileName={ringIcon}
                        title={'notifications'}
                        itemBackgroundColor={'var(--application-background-color)'}
@@ -17,7 +19,7 @@ export default function NotificationSidebar({itemsList}: NotificationSidebarType
                        withTime={true}
             />
 
-            <ItemsList itemsArray={itemsList}
+            <ItemsList itemsArray={meetingsArray}
                        iconFileName={meetIcon}
                        title={'notifications'}
                        itemBackgroundColor={'var(--application-background-color)'}
@@ -25,8 +27,8 @@ export default function NotificationSidebar({itemsList}: NotificationSidebarType
                        withTime={true}
             />
 
-            <ItemsList itemsArray={itemsList}
-                       iconFileName={null}
+            <ItemsList itemsArray={upcomingBirthdaysArray}
+                       iconFileName={''}
                        title={'notifications'}
                        itemBackgroundColor={'var(--application-background-color)'}
                        seeAllLink={''}
@@ -35,4 +37,6 @@ export default function NotificationSidebar({itemsList}: NotificationSidebarType
 
         </div>
     );
-}
+};
+
+export default NotificationSidebar;

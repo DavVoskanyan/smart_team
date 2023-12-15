@@ -1,14 +1,17 @@
-import {JSX} from 'react';
+import React from 'react';
+import MemberInfoListType from './MemberInfoListType';
+
 import styles from './MemberInfoList.module.css';
+import InfoCardListItem from '@/app/components/listItemComponents/InfoCardListItem/InfoCardListItem';
+import InfoCardListItemType from '@/app/components/listItemComponents/InfoCardListItem/InfoCardListItemType';
 
-import InfoCardListItem from "@/app/components/listItemComponents/InfoCardListItem/InfoCardListItem";
-
-export default function MemberInfoList({infoArray}: any): JSX.Element {
-
+const MemberInfoList: React.FC<MemberInfoListType> = (
+    {infoArray}: MemberInfoListType
+): React.ReactElement => {
     return (
         <div className={styles.memberInfoList}>
             {
-                infoArray.map((infoObject: any, index: number) => {
+                infoArray.map((infoObject: InfoCardListItemType, index: number) => {
                     return (
                         <InfoCardListItem
                             key={index}
@@ -20,4 +23,6 @@ export default function MemberInfoList({infoArray}: any): JSX.Element {
             }
         </div>
     );
-}
+};
+
+export default MemberInfoList;

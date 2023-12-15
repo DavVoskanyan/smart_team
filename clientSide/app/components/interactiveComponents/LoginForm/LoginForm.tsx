@@ -1,23 +1,24 @@
 'use client';
 
-import {JSX} from 'react';
-import Image from "next/image";
-import {classNameGenerator} from "@/app/utils/functions";
+import React from 'react';
+import LoginFormType from './LoginFormType';
+import Image from 'next/image';
+import {classNameGenerator} from '@/app/utils/functions';
 
 import styles from './LoginForm.module.css';
 
 import mailIcon from '@/public/images/icons/mailIcon.svg';
 import lockIcon from '@/public/images/icons/lockIcon.svg';
-import Link from "next/link";
+import Link from 'next/link';
 import {useRouter} from 'next/navigation';
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {AppRouterInstance} from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
 
-export default function LoginForm(): JSX.Element {
+const LoginForm: React.FC<LoginFormType> = (): React.ReactElement => {
 
     const router: AppRouterInstance = useRouter();
 
-    function loginButtonCLickHandler(eventObject: any): void {
+    function loginButtonCLickHandler(eventObject: React.MouseEvent): void {
         eventObject.preventDefault();
         router.push('/dashboard');
     }
@@ -31,21 +32,21 @@ export default function LoginForm(): JSX.Element {
 
             <div className={styles.allInputsContainer}>
                 <div className={classNameGenerator(styles.inputContainer, styles.mailInputContainer)}>
-                    <label className={styles.inputLabel} htmlFor="mailInput">Email</label>
-                    <input className={styles.mailInput} type="email" id="mailInput" placeholder="example@smp.am"/>
+                    <label className={styles.inputLabel} htmlFor='mailInput'>Email</label>
+                    <input className={styles.mailInput} type='email' id='mailInput' placeholder='example@smp.am'/>
                     <div className={styles.iconContainer}>
                         <Image
                             src={mailIcon}
-                            alt="mail Icon"/>
+                            alt='mail Icon'/>
                     </div>
                 </div>
                 <div className={classNameGenerator(styles.inputContainer, styles.passwordInputContainer)}>
-                    <label className={styles.inputLabel} htmlFor="passwordInput">Password</label>
-                    <input className={styles.passwordInput} type="password" id="passwordInput" placeholder="Enter your password"/>
+                    <label className={styles.inputLabel} htmlFor='passwordInput'>Password</label>
+                    <input className={styles.passwordInput} type='password' id='passwordInput' placeholder='Enter your password'/>
                     <div className={styles.iconContainer}>
                         <Image
                             src={lockIcon}
-                            alt="locak Icon"/>
+                            alt='locak Icon'/>
                     </div>
                 </div>
             </div>
@@ -60,4 +61,6 @@ export default function LoginForm(): JSX.Element {
             </div>
         </form>
     );
-}
+};
+
+export default LoginForm;

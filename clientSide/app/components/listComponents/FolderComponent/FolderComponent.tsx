@@ -1,7 +1,7 @@
 'use client';
 
-import React, {JSX} from 'react';
-
+import React from 'react';
+import FolderComponentType from './FolderComponentType';
 import Image from 'next/image';
 import folderIcon from '@/public/images/icons/folderIcon.svg';
 
@@ -9,7 +9,9 @@ import styles from './FolderComponent.module.css';
 import {useRouter} from 'next/navigation';
 import {AppRouterInstance} from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
-export default function FolderComponent({folderName, filesQuantity, folderUrlName}: any): JSX.Element {
+const FolderComponent: React.FC<FolderComponentType> = (
+    {folderName, filesQuantity, folderUrlName}: FolderComponentType
+): React.ReactElement => {
     const router: AppRouterInstance = useRouter();
     function doubleClickHandler() { router.push(`/files/${folderUrlName}`); }
 
@@ -24,4 +26,6 @@ export default function FolderComponent({folderName, filesQuantity, folderUrlNam
             </div>
         </div>
     );
-}
+};
+
+export default FolderComponent;

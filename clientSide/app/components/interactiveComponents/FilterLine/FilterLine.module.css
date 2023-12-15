@@ -49,6 +49,7 @@
     cursor: pointer;
 }
 .filterTitle {
+    font-family: 'Arial', sans-serif;
     font-size: calc(var(--index) * 0.7);
     font-weight: 500;
 

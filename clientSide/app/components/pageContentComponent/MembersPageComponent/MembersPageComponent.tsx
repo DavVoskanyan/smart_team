@@ -1,4 +1,6 @@
-import React, {JSX} from 'react';
+import React from 'react';
+import MembersPageComponentType from './MembersPageComponentType';
+
 import {classNameGenerator} from '@/app/utils/functions';
 import AddMemberButton from '@/app/components/interactiveComponents/AddMemberButton/AddMemberButton';
 import SearchInput from '@/app/components/interactiveComponents/SearchInput/SearchInput';
@@ -6,168 +8,13 @@ import MemberComponent from '@/app/components/listItemComponents/MemberComponent
 import FilterLine from '@/app/components/interactiveComponents/FilterLine/FilterLine';
 
 import styles from './MembersPageComponent.module.css';
-import {MemberObjectType} from '@/app/utils/types/localUsedTypes';
+import MemberComponentType from '@/app/components/listItemComponents/MemberComponent/MemberComponentType';
 
 
 
-export default function MembersPageComponent(): JSX.Element {
-    const isAdmin: boolean = true;
-    const isList: boolean = false;
-    const membersArray: Array<MemberObjectType> = [
-        {
-            firstName: 'David',
-            lastName: 'Voskanyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: true,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'Narek',
-            lastName: 'Harutunyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: false,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'David',
-            lastName: 'Voskanyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: true,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'David',
-            lastName: 'Voskanyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: true,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'Narek',
-            lastName: 'Harutunyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: false,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'David',
-            lastName: 'Voskanyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: true,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'David',
-            lastName: 'Voskanyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: true,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'Narek',
-            lastName: 'Harutunyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: false,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-        {
-            firstName: 'David',
-            lastName: 'Voskanyan',
-            profession: 'Web Developer',
-            avatarInfo: {
-                avatarImageFileName: '',
-                avatarColor: '#FF7675',
-            },
-            memberLink: '',
-            isOnline: true,
-            socialsArray: [
-                {
-                    linkIcon: '',
-                    link: ''
-                }
-            ]
-        },
-    ];
+const MembersPageComponent: React.FC<MembersPageComponentType> = (
+    {isAdmin, isList, membersArray}: MembersPageComponentType
+): React.ReactElement => {
 
     return (
         <div className={styles.membersPageComponent}>
@@ -181,7 +28,7 @@ export default function MembersPageComponent(): JSX.Element {
             <div className={styles.membersPrimaryContainer}>
                 <div className={classNameGenerator(styles.membersSecondaryContainer, isList ? styles.listView : '')}>
                     {
-                        membersArray.map((memberObject: any, memberIndex: number) => {
+                        membersArray.map((memberObject: MemberComponentType, memberIndex: number) => {
                             return (
                                 <MemberComponent key={memberIndex}
                                                  firstName={memberObject.firstName}
@@ -200,4 +47,6 @@ export default function MembersPageComponent(): JSX.Element {
             </div>
         </div>
     );
-}
+};
+
+export default MembersPageComponent;
