@@ -16,7 +16,7 @@
 .userName {
     color: var(--dark-color);
     font-size: calc(var(--index) * .65);
-    font-family: 'KaushanScript', cursive;
+    font-family: 'Arial', sans-serif;
 }
 .avatarContainer {
     width: calc(var(--index) * 1.8);

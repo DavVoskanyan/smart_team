@@ -1,9 +1,11 @@
-import {JSX} from "react";
-import {ListItemType} from "@/app/utils/types/propsTypes"
-import styles from "./ListItem.module.css";
-import DateAndTime from "@/app/components/listItemComponents/DateAndTime/DateAndTime";
+import React from 'react';
+import ListItemType from './ListItemType';
+import styles from './ListItem.module.css';
+import DateAndTime from '@/app/components/listItemComponents/DateAndTime/DateAndTime';
 
-export default function ListItem({withTime, date, message, itemBackgroundColor}: ListItemType): JSX.Element {
+const ListItem: React.FC<ListItemType> = (
+    {withTime, date, message, itemBackgroundColor}: ListItemType
+): React.ReactElement => {
     return (
         <div className={styles.listItem} style={{ backgroundColor: itemBackgroundColor }}>
             <DateAndTime withTime={withTime} date={date}/>
@@ -13,4 +15,6 @@ export default function ListItem({withTime, date, message, itemBackgroundColor}:
             </p>
         </div>
     );
-}
+};
+
+export default ListItem;

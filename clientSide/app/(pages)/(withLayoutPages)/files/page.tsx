@@ -1,25 +1,59 @@
-import React, {JSX} from 'react';
+import React from 'react';
 
 import styles from './page.module.css';
 import {classNameGenerator} from '@/app/utils/functions';
 import NotificationSidebar from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar';
 import FoldersPageComponent from '@/app/components/pageContentComponent/FoldersPageComponent/FoldersPageComponent';
-import {listItemObjectType} from '@/app/utils/types/localUsedTypes';
+import ListItemType from '@/app/components/listItemComponents/ListItem/ListItemType';
+import FolderComponentType from '@/app/components/listComponents/FolderComponent/FolderComponentType';
 
 
-export default function Home(): JSX.Element {
+const Folders = (): React.ReactElement => {
     const currentDate: Date = new Date();
-    const itemsList: Array<listItemObjectType> = [
+    const notificationArray: Array<ListItemType> = [
         {
             date: currentDate,
-            message: 'Աղջիկներ պետք է 15:00-ի համար սեղան պատրաստել'
+            message: 'Աղջիկներ պետք է 15:00-ի համար սեղան պատրաստել',
+            withTime: true,
+            itemBackgroundColor: 'var(--application-background-color)',
         },
         {
             date: currentDate,
-            message: 'Hello World'
-        }
+            message: 'Hello World',
+            withTime: true,
+            itemBackgroundColor: 'var(--application-background-color)',
+        },
     ];
-    const foldersArray: Array<object> = [
+    const meetingsArray:  Array<ListItemType> = [
+        {
+            date: currentDate,
+            message: 'Training with clients',
+            withTime: true,
+            itemBackgroundColor: 'var(--application-background-color)',
+        },
+        {
+            date: currentDate,
+            message: 'Hello World',
+            withTime: true,
+            itemBackgroundColor: 'var(--application-background-color)',
+        },
+    ];
+    const upcomingBirthdaysArray:  Array<ListItemType> = [
+        {
+            date: currentDate,
+            message: 'Training with clients',
+            withTime: false,
+            itemBackgroundColor: 'var(--application-background-color)',
+        },
+        {
+            date: currentDate,
+            message: 'Hello World',
+            withTime: false,
+            itemBackgroundColor: 'var(--application-background-color)',
+        },
+    ];
+
+    const foldersArray: Array<FolderComponentType> = [
         {
             folderName: 'Documents',
             filesQuantity: 120,
@@ -50,7 +84,13 @@ export default function Home(): JSX.Element {
     return (
         <main className={classNameGenerator(styles.main, 'pageContentContainer')}>
             <FoldersPageComponent foldersArray={foldersArray}/>
-            <NotificationSidebar itemsList={itemsList}/>
+
+            <NotificationSidebar notificationsArray={notificationArray}
+                                 meetingsArray={meetingsArray}
+                                 upcomingBirthdaysArray={upcomingBirthdaysArray}
+            />
         </main>
     );
-}
+};
+
+export default Folders;

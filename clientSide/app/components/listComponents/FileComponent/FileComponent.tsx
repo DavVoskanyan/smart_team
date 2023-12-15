@@ -1,8 +1,12 @@
-import React, {JSX} from 'react';
+import React from 'react';
+import FileComponentType from './FileComponentType';
 import Image from 'next/image';
+
 import styles from './FileComponent.module.css';
 
-export default function FileComponent({fileName}: {fileName: string}): JSX.Element {
+const FileComponent: React.FC<FileComponentType> = (
+    {fileName}: FileComponentType
+): React.ReactElement => {
     return (
         <div className={styles.fileComponent}>
             <Image className={styles.filePreview}
@@ -14,4 +18,6 @@ export default function FileComponent({fileName}: {fileName: string}): JSX.Eleme
             <span className={styles.fileName}>{fileName}</span>
         </div>
     );
-}
+};
+
+export default FileComponent;

@@ -32,6 +32,7 @@
 }
 .calendarDay {
     font-weight: 400;
+    font-family: Arial, sans-serif;
 }
 .notCurrentMonthDay {
     opacity: 0.3;

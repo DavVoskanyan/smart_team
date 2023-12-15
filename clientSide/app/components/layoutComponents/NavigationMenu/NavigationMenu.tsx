@@ -1,11 +1,11 @@
 'use client';
 
-import {Dispatch, JSX, SetStateAction, useState} from 'react';
-import {classNameGenerator} from '@/app/utils/functions';
+import React, {Dispatch, SetStateAction, useState} from 'react';
+import NavigationMenuType from './NavigationMenuType';
 import styles from './NavigationMenu.module.css';
-import NavigationItem from "@/app/components/listItemComponents/NavigationItem/NavigationItem";
+import NavigationItem from '@/app/components/listItemComponents/NavigationItem/NavigationItem';
 
-export default function NavigationMenu(): JSX.Element {
+const NavigationMenu: React.FC<NavigationMenuType> = (): React.ReactElement => {
 
     type NavigationItemType = {
         itemName: string,
@@ -52,4 +52,6 @@ export default function NavigationMenu(): JSX.Element {
             }
         </nav>
     );
-}
+};
+
+export default NavigationMenu;

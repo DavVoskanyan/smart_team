@@ -1,15 +1,17 @@
-import {JSX} from 'react';
-import {classNameGenerator} from "@/app/utils/functions";
+import React from 'react';
+import {classNameGenerator} from '@/app/utils/functions';
 import styles from './MemberComponent.module.css';
 
-import Link from "next/link";
-import Image from "next/image";
-import UserAvatar from "@/app/components/decorativeComponents/UserAvatar/UserAvatar";
+import Link from 'next/link';
+import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
 
-import linkedInLogo from '@/public/images/logos/linkedIn.svg';
-import linkedInActiveLogo from '@/public/images/logos/linkedInActive.svg';
+import MemberComponentType from '@/app/components/listItemComponents/MemberComponent/MemberComponentType';
+import SocialLinkComponent from '@/app/components/listItemComponents/SocialLinkComponent/SocialLinkComponent';
+import SocialLinkComponentType from '@/app/components/listItemComponents/SocialLinkComponent/SocialLinkComponentType';
 
-export default function MemberComponent({firstName, lastName, profession, avatarInfo, memberLink, isOnline, socialsArray, isListView}: any): JSX.Element {
+const MemberComponent: React.FC<MemberComponentType> = (
+    {firstName, lastName, profession, avatarInfo, memberLink, isOnline, socialsArray, isListView}: MemberComponentType
+): React.ReactElement => {
     return (
         <div className={classNameGenerator(styles.memberComponent, isListView ? styles.listViewComponent : '') }>
             <span className={classNameGenerator(styles.presenceIndicator, isOnline ? styles.online : '')} />
@@ -28,16 +30,19 @@ export default function MemberComponent({firstName, lastName, profession, avatar
 
             <div className={styles.socialsContainer}>
                 {
-                    socialsArray.map((socialObject: any, socialIndex: number) => {
+                    socialsArray.map((socialObject: SocialLinkComponentType, socialIndex: number) => {
                         return (
-                            <Link className={styles.socialLink} key={socialIndex} href={socialObject.link}>
-                                <Image className={styles.socialHoveredIcon} src={linkedInActiveLogo} alt={'socialLogoActive'}/>
-                                <Image className={styles.socialIcon} src={linkedInLogo} alt={'socialLogo'}/>
-                            </Link>
+                            <SocialLinkComponent key={socialIndex}
+                                                 link={socialObject.link}
+                                                 activeIconFileName={socialObject.activeIconFileName}
+                                                 iconFileName={socialObject.iconFileName}
+                            />
                         );
                     })
                 }
             </div>
         </div>
     );
-}
+};
+
+export default MemberComponent;

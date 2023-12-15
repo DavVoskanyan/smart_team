@@ -1,16 +1,17 @@
-import {JSX} from 'react';
-import {classNameGenerator} from "@/app/utils/functions";
+import React from 'react';
+import CharacteristicsCircleType from './CharacteristicsCircleType';
+import {classNameGenerator} from '@/app/utils/functions';
+
 import styles from './CharacteristicsCircle.module.css';
 
-export default function CharacteristicsCircle({index, title, percent, color}: any): JSX.Element {
+const CharacteristicsCircle: React.FC<CharacteristicsCircleType> = (
+    {title, percent, color}: CharacteristicsCircleType
+): React.ReactElement => {
     return (
-        <div style={{
-                backgroundColor: color,
-             }}
+        <div style={{ backgroundColor: color, }}
              className={classNameGenerator(
                     styles.characteristicsCircle,
                     styles[`size${percent}`],
-                    styles[`point${index}`],
                     !color ? styles.uncolored : ''
              )}
              title={title}
@@ -18,4 +19,6 @@ export default function CharacteristicsCircle({index, title, percent, color}: an
             {title}
         </div>
     );
-}
+};
+
+export default CharacteristicsCircle;

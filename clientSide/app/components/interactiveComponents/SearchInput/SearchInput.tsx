@@ -1,14 +1,15 @@
-import {JSX} from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 import styles from './SearchInput.module.css';
 import searchIcon from '@/public/images/icons/searchIcon.svg';
+import SearchInputType from '@/app/components/interactiveComponents/SearchInput/SearchInputType';
 
-export default function SearchInput(): JSX.Element {
+const SearchInput: React.FC<SearchInputType> = (): React.ReactElement => {
     return (
         <div className={styles.searchInputContainer}>
             <input className={styles.searchInput}
-                   type={"text"}
+                   type={'text'}
                    placeholder={'Փնտրել'}
             />
 
@@ -18,4 +19,6 @@ export default function SearchInput(): JSX.Element {
             />
         </div>
     );
-}
+};
+
+export default SearchInput;

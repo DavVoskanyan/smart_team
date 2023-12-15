@@ -1,9 +1,13 @@
-import {JSX} from 'react';
-import Image from "next/image";
-import styles from './GreetingComponent.module.css';
-import smileImage from '@/public/images/smileImage.svg'
+import React from 'react';
+import Image from 'next/image';
+import GreetingComponentType from './GreetingComponentType';
 
-export default function GreetingComponent({userName}: any): JSX.Element {
+import styles from './GreetingComponent.module.css';
+import smileImage from '@/public/images/smileImage.svg';
+
+const GreetingComponent: React.FC<GreetingComponentType> = (
+    {userName}: GreetingComponentType
+): React.ReactElement => {
     return (
         <div className={styles.greetingComponent}>
             <div className={styles.textContainer}>
@@ -16,4 +20,6 @@ export default function GreetingComponent({userName}: any): JSX.Element {
             />
         </div>
     );
-}
+};
+
+export default GreetingComponent;

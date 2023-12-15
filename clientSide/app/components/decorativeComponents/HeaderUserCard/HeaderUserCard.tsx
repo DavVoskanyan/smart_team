@@ -1,13 +1,17 @@
 'use client';
 
-import {Dispatch, JSX, SetStateAction, useState} from 'react';
-import Image from "next/image";
-import Link from "next/link";
-import {classNameGenerator} from '@/app/utils/functions';
-import styles from './HeaderUserCard.module.css';
-import UserAvatar from "@/app/components/decorativeComponents/UserAvatar/UserAvatar";
+import React, {Dispatch, SetStateAction, useState} from 'react';
+import Image from 'next/image';
+import HeaderUserCardType from './HeaderUserCardType';
 
-export default function HeaderUserCard(): JSX.Element {
+import {classNameGenerator} from '@/app/utils/functions';
+
+import styles from './HeaderUserCard.module.css';
+import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
+
+const HeaderUserCard: React.FC<HeaderUserCardType> = (
+    {firstName, lastName, avatarColor, imageFileName}: HeaderUserCardType
+): React.ReactElement => {
 
     const [isDark, changeToDark]: [boolean, Dispatch<SetStateAction<boolean>>]
         = useState(false);
@@ -15,11 +19,15 @@ export default function HeaderUserCard(): JSX.Element {
     return (
         <div tabIndex={1} className={styles.headerUserCard}>
             <span className={styles.userName}>
-                Ստեփանյան Ջուլիետա
+                {firstName} {lastName}
             </span>
 
             <div className={styles.avatarContainer}>
-                <UserAvatar firstName={'David'} lastName={'Voskanyan'} avatarImageFileName={null} avatarColor={'#FF7675'}/>
+                <UserAvatar firstName={firstName}
+                            lastName={lastName}
+                            avatarImageFileName={imageFileName}
+                            avatarColor={avatarColor}
+                />
             </div>
 
             <Image
@@ -80,4 +88,6 @@ export default function HeaderUserCard(): JSX.Element {
             </div>
         </div>
     );
-}
+};
+
+export default HeaderUserCard;

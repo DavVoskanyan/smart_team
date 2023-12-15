@@ -1,13 +1,15 @@
-import {JSX} from 'react';
-import {NewFilesType} from '@/app/utils/types/propsTypes';
-import Image from "next/image";
+import React from 'react';
+import NewFilesType from './NewFilesType';
+import Image from 'next/image';
 
 import styles from './NewFiles.module.css';
 
 import cameraIcon from '@/public/images/icons/cameraIcon.svg';
 import filesIcon from '@/public/images/icons/filesIcon.svg';
 
-export default function NewFiles({photosQuantity, documentsQuantity}: NewFilesType): JSX.Element {
+const NewFiles: React.FC<NewFilesType> = (
+    {photosQuantity, documentsQuantity}: NewFilesType
+): React.ReactElement => {
     return (
         <div className={styles.newFiles}>
             <h3 className={styles.title}>New Files</h3>
@@ -39,4 +41,6 @@ export default function NewFiles({photosQuantity, documentsQuantity}: NewFilesTy
             </div>
         </div>
     );
-}
+};
+
+export default NewFiles;

@@ -1,7 +1,11 @@
-import {JSX} from 'react';
+import React from 'react';
+import SmallMemberInfoCardType from './SmallMemberInfoCardType';
+
 import styles from './SmallMemberInfoCard.module.css';
 
-export default function SmallMemberInfoCard({cardTitle, children}: any): JSX.Element {
+const SmallMemberInfoCard: React.FC<SmallMemberInfoCardType> = (
+    {cardTitle, children}: SmallMemberInfoCardType
+): React.ReactElement => {
     return (
         <div className={styles.smallMemberInfoCard}>
             <h2 className={styles.cardTitle}>{cardTitle}</h2>
@@ -10,4 +14,6 @@ export default function SmallMemberInfoCard({cardTitle, children}: any): JSX.Ele
             </div>
         </div>
     );
-}
+};
+
+export default SmallMemberInfoCard;

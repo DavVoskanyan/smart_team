@@ -19,10 +19,9 @@
     height: 100%;
     object-fit: cover;
 
-    display: none;
+    display: block;
 
     position: absolute;
     left: 0;
     top: 0;
 }
-.userImage.hasImage { display: block; }

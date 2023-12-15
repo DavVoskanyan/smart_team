@@ -1,19 +1,22 @@
-import {JSX} from "react";
-import {ItemsListType, ListItemType} from '@/app/utils/types/propsTypes';
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./ItemsList.module.css";
-import ListItem from "@/app/components/listItemComponents/ListItem/ListItem";
-import {listItemObjectType} from "@/app/utils/types/localUsedTypes";
+import React from 'react';
+import ItemsListType from './ItemsListType';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function ItemsList({itemsArray, iconFileName, title, itemBackgroundColor, withTime, seeAllLink}: ItemsListType): JSX.Element {
-    const imageElement: JSX.Element = <Image className={styles.titleIcon}
+import styles from './ItemsList.module.css';
+import ListItem from '@/app/components/listItemComponents/ListItem/ListItem';
+import ListItemType from '@/app/components/listItemComponents/ListItem/ListItemType';
+
+const ItemsList: React.FC<ItemsListType> = (
+    {itemsArray, iconFileName, title, itemBackgroundColor, withTime, seeAllLink}: ItemsListType
+): React.ReactElement => {
+    const imageElement: React.ReactElement = <Image className={styles.titleIcon}
                                              src={iconFileName}
                                              alt={'icon'}
                                              width={26}
                                              height={26}/>;
-    const seeAllLinkElement: JSX.Element = <Link className={styles.seeAllLink}
-                                                 href={seeAllLink}>See All</Link>
+    const seeAllLinkElement: React.ReactElement = <Link className={styles.seeAllLink}
+                                                 href={seeAllLink}>See All</Link>;
     return (
         <div className={styles.itemsList}>
             <div className={styles.listHeader}>
@@ -24,7 +27,7 @@ export default function ItemsList({itemsArray, iconFileName, title, itemBackgrou
                 {seeAllLink ? seeAllLinkElement: '' }
             </div>
             <div className={styles.list}>
-                {itemsArray.map((item: listItemObjectType, index: number): JSX.Element => {
+                {itemsArray.map((item: ListItemType, index: number): JSX.Element => {
                     return(
                         <ListItem key={index}
                                   itemBackgroundColor={itemBackgroundColor}
@@ -36,4 +39,6 @@ export default function ItemsList({itemsArray, iconFileName, title, itemBackgrou
             </div>
         </div>
     );
-}
+};
+
+export default ItemsList;

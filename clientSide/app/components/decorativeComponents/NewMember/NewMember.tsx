@@ -1,11 +1,14 @@
-import {JSX} from 'react';
-import {NewMemberType} from '@/app/utils/types/propsTypes';
-import {classNameGenerator, dateToStringParser} from '@/app/utils/functions';
-import Image from "next/image";
-import styles from './NewMember.module.css';
-import UserAvatar from "@/app/components/decorativeComponents/UserAvatar/UserAvatar";
+import React from 'react';
+import NewMemberType from './NewMemberType';
 
-export default function NewMember({firstName, lastName, profession, avatarImageFileName, avatarColor, joinDate}: NewMemberType): JSX.Element {
+import {dateToStringParser} from '@/app/utils/functions';
+
+import styles from './NewMember.module.css';
+import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
+
+const NewMember: React.FC<NewMemberType> = (
+    {firstName, lastName, profession, avatarImageFileName, avatarColor, joinDate}: NewMemberType
+): React.ReactElement => {
     return (
         <div className={styles.newMember}>
             <h3 className={styles.title}>New Member</h3>
@@ -13,7 +16,7 @@ export default function NewMember({firstName, lastName, profession, avatarImageF
                 <div className={styles.textInfo}>
                     <span className={styles.memberName}>{firstName} {lastName}</span>
                     <span className={styles.memberPosition}>{profession}</span>
-                    <span className={styles.joinDate}>Joined Us - {dateToStringParser(joinDate, "D.M.Y", ".")}</span>
+                    <span className={styles.joinDate}>Joined Us - {dateToStringParser(joinDate, 'D.M.Y', '.')}</span>
                 </div>
 
                 <div className={styles.userAvatarContainer}>
@@ -27,4 +30,6 @@ export default function NewMember({firstName, lastName, profession, avatarImageF
             </div>
         </div>
     );
-}
+};
+
+export default NewMember;

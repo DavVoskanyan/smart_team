@@ -1,5 +1,6 @@
-import React, {JSX} from 'react';
+import React from 'react';
 import Image from 'next/image';
+import FilesPageComponentType from './FilesPageComponentType';
 
 import FileComponent from '@/app/components/listComponents/FileComponent/FileComponent';
 
@@ -9,8 +10,11 @@ import FilesFilterLine from '@/app/components/interactiveComponents/FilesFilterL
 
 import styles from './FilesPageComponent.module.css';
 import {classNameGenerator} from '@/app/utils/functions';
+import FileComponentType from '@/app/components/listComponents/FileComponent/FileComponentType';
 
-export default function FilesPageComponent({filesArray}: {filesArray: Array<object>}): JSX.Element {
+const FilesPageComponent: React.FC<FilesPageComponentType> = (
+    {filesArray}: FilesPageComponentType
+): React.ReactElement => {
     const hasTwoColumns: boolean = true;
     return (
         <div className={styles.filesPageComponent}>
@@ -27,13 +31,17 @@ export default function FilesPageComponent({filesArray}: {filesArray: Array<obje
             <FilesFilterLine folderName={'Corporate 30-12-2021'}/>
             <div className={classNameGenerator(styles.filesGrid, hasTwoColumns ? styles.twoColumnGrid : '')}>
                 {
-                    filesArray.map((file: any, index: number): JSX.Element => {
+                    filesArray.map((file: FileComponentType, index: number): React.ReactElement => {
                         return (
-                            <FileComponent key={index} fileName={file.fileName}/>
+                            <FileComponent key={index}
+                                           fileName={file.fileName}
+                            />
                         );
                     })
                 }
             </div>
         </div>
     );
-}
+};
+
+export default FilesPageComponent;
