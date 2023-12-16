@@ -1,11 +1,11 @@
 import {DAYS_OF_WEEK, MONTH_NAMES} from './constants';
 
 /**
+ * @description Function creates and returns string that contains CSSClasses passed to function.
+ *
  * @param classes : Array<string> - Contains all arguments passed to function.
  *
  * @return string - Returns string that includes all arguments passed to function separated with ' '(space).
- *
- * @description Function creates and returns string that contains CSSClasses passed to function.
  *
  * @author David Voskanyan
  */
@@ -14,13 +14,25 @@ export function classNameGenerator(...classes: Array<string>): string {
 }
 
 /**
+ * @description Function creates and returns string of date with different formats.
+ *  <ul>
+ *      <li>Y  - full year (1970, 2020, ...)</li>
+ *      <li>M  - month number (03, 12, ...)</li>
+ *      <li>MN - month name (May, December, ...)</li>
+ *      <li>D  - day number in month (01, 27, ...)</li>
+ *      <li>DN - day name of week (Monday, Saturday, ...)</li>
+ *      <li>h  - hours as number (03, 17, ...)</li>
+ *      <li>m  - minutes as number (07, 54, ...)</li>
+ *      <li>s  - seconds as number (09, 36, ...)</li>
+ *  </ul>
+ *
+ * @example dateToStringParser(new Date(1702722543000), 'Y/M/D', '/') => '2023/12/16'
+ *
  * @param date : Date - Date from which the string will be generated.
  * @param formatString : string - String that represents format by which the string will be generated. (example "D:M:Y")
  * @param separator : string - String that contains separator for formatString. (example ":")
  *
- * @return string - Representation of passed date as string.
- *
- * @description Function creates and returns string of date with different formats.
+ * @returns string - Representation of passed date as string.
  *
  * @author David Voskanyan
  */
