@@ -1,6 +1,6 @@
 version: '3'
 services:
-  # Frontend service using Next.js
+#   Frontend service using Next.js
   frontend:
     image: node:20
     build:
@@ -14,32 +14,24 @@ services:
     networks:
       smart_team:
 
-  # Backend service using PHP
-#  backend:
-#    build:
-#      context: ./serverSide
-#    ports:
-#      - "8080:80"
-#    depends_on:
-#      - database
-#    networks:
-#      - smart_team
-#
-#  # MariaDB database service
-#  database:
-#    image: mariadb:latest
-#    environment:
-#      MYSQL_ROOT_PASSWORD: examplepassword
-#      MYSQL_DATABASE: mydb
-#      MYSQL_USER: myuser
-#      MYSQL_PASSWORD: mypassword
-#    volumes:
-#      - db-data:/var/lib/mysql
-#    networks:
-#      - smart_team
-#
-#volumes:
-#  db-data:
+
+  # mysql database service
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: smart_team_database
+      MYSQL_USER: smart_team
+      MYSQL_PASSWORD: smart_team
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+
+volumes:
+  mysql_data:
+    driver: local
 
 networks:
   smart_team:
