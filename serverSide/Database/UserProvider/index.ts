@@ -1,13 +1,10 @@
 import express from 'express';
-
-import getRequestRouter from './src/routers/getRequestRouter';
-import postRequestRouter from  './src/routers/postRequestRouter';
+import RequestsRouter from './src/requestsRouter';
 
 const app = express();
 app.use(express.json());
 
-app.use('/get', getRequestRouter);
-app.use('/post', postRequestRouter);
+app.use('/users', RequestsRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

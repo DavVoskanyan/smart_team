@@ -11,8 +11,6 @@ services:
 #      - backend
 #    environment:
 #      - BACKEND_URL=http://backend:8080
-    networks:
-      smart_team:
 
 
   # mysql database service
@@ -32,6 +30,3 @@ services:
 volumes:
   mysql_data:
     driver: local
-
-networks:
-  smart_team:
