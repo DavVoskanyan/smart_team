@@ -15,12 +15,6 @@ module.exports = {
       account_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {
-          model: 'Account',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
       },
       company_name: {
         type: Sequelize.STRING,

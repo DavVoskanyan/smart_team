@@ -21,6 +21,14 @@ module.exports = {
         allowNull: false,
         defaultValue: false,
       },
+      phone_number: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      address: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       description: {
         type: Sequelize.TEXT,
       },
