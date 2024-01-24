@@ -57,7 +57,7 @@ module.exports = {
       },
       is_online: {
         type: Sequelize.BOOLEAN,
-        defaultValue: true,
+        defaultValue: false,
       },
       is_admin: {
         type: Sequelize.BOOLEAN,

@@ -1,5 +1,3 @@
-import {DataTypes} from 'sequelize';
-
 export default class UserTemplate {
 
     private firstName: string = '';
