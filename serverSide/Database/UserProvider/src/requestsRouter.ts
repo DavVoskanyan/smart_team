@@ -2,7 +2,6 @@ import express, {Request, Response} from 'express';
 import GetRequestsController from './controllers/GetRequestsController';
 import PostRequestsController from './controllers/PostRequestsController';
 import UserTemplate from './modelTemplates/UserTemplate';
-import User from './models/User';
 
 const router = express.Router();
 
@@ -11,7 +10,7 @@ router.get('/:userId', (request: Request, response: Response): void => {
     console.log(`user id is: ${userIdFromURL}`);
 
     if(userIdFromURL && !isNaN(userIdFromURL)) {
-        console.log('User id is valid!');
+        console.log('Account id is valid!');
         GetRequestsController.getUserById(userIdFromURL)
             .then( (result: UserTemplate) => {
                 console.log(result)
@@ -29,7 +28,7 @@ router.get('/:userId', (request: Request, response: Response): void => {
 
 router.post('/', (request: Request, response: Response): void => {
     const requestInfo = request.body;
-    const newUser = new UserTemplate(
+    const newUser: UserTemplate = new UserTemplate(
         requestInfo['firstName'],
         requestInfo['lastName'],
         requestInfo['phoneNumber'],
