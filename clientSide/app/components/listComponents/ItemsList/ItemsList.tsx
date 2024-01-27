@@ -3,7 +3,7 @@ import ItemsListType from './ItemsListType';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from './ItemsList.module.css';
+import styles from '@/app/components/listComponents/ItemsList/ItemsList.module.css';
 import ListItem from '@/app/components/listItemComponents/ListItem/ListItem';
 import ListItemType from '@/app/components/listItemComponents/ListItem/ListItemType';
 

@@ -3,7 +3,7 @@ import NewMemberType from './NewMemberType';
 
 import {dateToStringParser} from '@/app/utils/functions';
 
-import styles from './NewMember.module.css';
+import styles from '@/app/components/decorativeComponents/NewMember/NewMember.module.css';
 import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
 
 const NewMember: React.FC<NewMemberType> = (

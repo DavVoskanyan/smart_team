@@ -1,6 +1,6 @@
 import React from 'react';
 import {classNameGenerator} from '@/app/utils/functions';
-import styles from './MemberComponent.module.css';
+import styles from '@/app/components/listItemComponents/MemberComponent/MemberComponent.module.css';
 
 import Link from 'next/link';
 import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';

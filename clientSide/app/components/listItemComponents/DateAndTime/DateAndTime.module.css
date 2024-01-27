@@ -1,11 +1,13 @@
 .dateAndTime {
     width: calc(var(--index) * 3);
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .dateAndTime.withTime .date {
     width: 100%;
+    height: auto;
     color: var(--main-color);
     text-align: center;
     font-size: calc(var(--index) * 0.5);
@@ -13,6 +15,7 @@
 }
 .onlyDate.onlyDate .date {
     width: 100%;
+    height: auto;
     color: var(--main-color);
     text-align: center;
     text-transform: capitalize;
@@ -22,6 +25,7 @@
 
 .time {
     width: 100%;
+    height: auto;
     text-align: center;
     font-size: calc(var(--index) * 0.65);
     font-weight: 700;

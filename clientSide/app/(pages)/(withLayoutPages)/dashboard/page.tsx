@@ -1,7 +1,7 @@
 import React from 'react';
 import {classNameGenerator} from '@/app/utils/functions';
 
-import styles from './page.module.css';
+import styles from '@/app/(pages)/(withLayoutPages)/dashboard/page.module.css';
 
 import ringIcon from '@/public/images/icons/ringIcon.svg';
 import meetIcon from '@/public/images/icons/meetIcon.svg';

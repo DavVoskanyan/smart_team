@@ -2,7 +2,7 @@ import React from 'react';
 import NewFilesType from './NewFilesType';
 import Image from 'next/image';
 
-import styles from './NewFiles.module.css';
+import styles from '@/app/components/decorativeComponents/NewFiles/NewFiles.module.css';
 
 import cameraIcon from '@/public/images/icons/cameraIcon.svg';
 import filesIcon from '@/public/images/icons/filesIcon.svg';

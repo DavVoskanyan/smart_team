@@ -5,6 +5,7 @@
     position: relative;
 }
 .titleCircle {
+    width: auto;
     height: 55%;
     aspect-ratio: 1;
 

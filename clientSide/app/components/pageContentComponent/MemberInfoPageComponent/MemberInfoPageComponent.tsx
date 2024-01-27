@@ -1,6 +1,6 @@
 import React from 'react';
 import MemberInfoPageComponentType from './MemberInfoPageComponentType';
-import styles from  './MemberInfoPageComponent.module.css';
+import styles from  '@/app/components/pageContentComponent/MemberInfoPageComponent/MemberInfoPageComponent.module.css';
 
 import AboutMemberInfoCard from '@/app/components/containerComponents/AboutMemberInfoCard/AboutMemberInfoCard';
 import SmallMemberInfoCard from '@/app/components/containerComponents/SmallMemberInfoCard/SmallMemberInfoCard';

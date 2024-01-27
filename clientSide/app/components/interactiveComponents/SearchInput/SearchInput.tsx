@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import styles from './SearchInput.module.css';
+import styles from '@/app/components/interactiveComponents/SearchInput/SearchInput.module.css';
 import searchIcon from '@/public/images/icons/searchIcon.svg';
 import SearchInputType from '@/app/components/interactiveComponents/SearchInput/SearchInputType';
 

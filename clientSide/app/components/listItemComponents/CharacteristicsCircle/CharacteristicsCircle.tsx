@@ -2,7 +2,7 @@ import React from 'react';
 import CharacteristicsCircleType from './CharacteristicsCircleType';
 import {classNameGenerator} from '@/app/utils/functions';
 
-import styles from './CharacteristicsCircle.module.css';
+import styles from '@/app/components/listItemComponents/CharacteristicsCircle/CharacteristicsCircle.module.css';
 
 const CharacteristicsCircle: React.FC<CharacteristicsCircleType> = (
     {title, percent, color}: CharacteristicsCircleType

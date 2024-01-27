@@ -10,6 +10,7 @@
 }
 .year {
     width: 10%;
+    height: auto;
     text-align: center;
 }
 .infoSeparator {
@@ -25,6 +26,7 @@
 }
 .infoSeparator::before {
     content: '';
+    width: auto;
     height: 25%;
     aspect-ratio: 1;
 
@@ -39,4 +41,5 @@
 }
 .infoContainer {
     width: 80%;
+    height: auto;
 }

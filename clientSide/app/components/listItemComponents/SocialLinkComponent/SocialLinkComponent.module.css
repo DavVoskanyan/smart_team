@@ -1,5 +1,6 @@
 .socialLink {
     width: calc(var(--index) * 1.7);
+    height: auto;
     aspect-ratio: 1;
 
     border: 1px solid var(--main-color);

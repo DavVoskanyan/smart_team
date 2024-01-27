@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItemType from './ListItemType';
-import styles from './ListItem.module.css';
+import styles from '@/app/components/listItemComponents/ListItem/ListItem.module.css';
 import DateAndTime from '@/app/components/listItemComponents/DateAndTime/DateAndTime';
 
 const ListItem: React.FC<ListItemType> = (

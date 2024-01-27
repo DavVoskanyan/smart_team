@@ -9,7 +9,7 @@ import listIcon from '@/public/images/icons/listIcon.svg';
 import listIconActive from '@/public/images/icons/listIconActive.svg';
 import chevronIcon from '@/public/images/icons/chevron.svg';
 
-import styles from './FilterLine.module.css';
+import styles from '@/app/components/interactiveComponents/FilterLine/FilterLine.module.css';
 
 const FilterLine: React.FC<FilterLineType> = (): React.ReactElement => {
     return (

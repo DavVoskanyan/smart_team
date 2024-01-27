@@ -1,7 +1,7 @@
 import React from 'react';
 import MemberExperienceListType from './MemberExperienceListType';
 
-import styles from './MemberExperienceList.module.css';
+import styles from '@/app/components/listComponents/MemberExperienceList/MemberExperienceList.module.css';
 import ExperienceCardListItem from '@/app/components/listItemComponents/ExperienceCardListItem/ExperienceCardListItem';
 import ExperienceCardListItemType
     from '@/app/components/listItemComponents/ExperienceCardListItem/ExperienceCardListItemType';

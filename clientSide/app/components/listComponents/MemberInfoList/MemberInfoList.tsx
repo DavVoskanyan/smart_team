@@ -1,7 +1,7 @@
 import React from 'react';
 import MemberInfoListType from './MemberInfoListType';
 
-import styles from './MemberInfoList.module.css';
+import styles from '@/app/components/listComponents/MemberInfoList/MemberInfoList.module.css';
 import InfoCardListItem from '@/app/components/listItemComponents/InfoCardListItem/InfoCardListItem';
 import InfoCardListItemType from '@/app/components/listItemComponents/InfoCardListItem/InfoCardListItemType';
 

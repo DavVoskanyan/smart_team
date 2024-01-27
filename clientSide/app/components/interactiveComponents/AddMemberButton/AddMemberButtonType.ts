@@ -1,5 +1,3 @@
-type AddMemberButtonType = {
-
-}
+type AddMemberButtonType = object;
 
 export default AddMemberButtonType;

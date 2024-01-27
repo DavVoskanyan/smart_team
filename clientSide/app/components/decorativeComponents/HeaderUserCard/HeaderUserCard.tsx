@@ -6,7 +6,7 @@ import HeaderUserCardType from './HeaderUserCardType';
 
 import {classNameGenerator} from '@/app/utils/functions';
 
-import styles from './HeaderUserCard.module.css';
+import styles from '@/app/components/decorativeComponents/HeaderUserCard/HeaderUserCard.module.css';
 import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
 
 const HeaderUserCard: React.FC<HeaderUserCardType> = (

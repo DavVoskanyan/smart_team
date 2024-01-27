@@ -8,7 +8,7 @@ import coloredClipIcon from '@/public/images/icons/clipColoredIcon.svg';
 import whiteClipIcon from '@/public/images/icons/clipWhiteIcon.svg';
 import FilesFilterLine from '@/app/components/interactiveComponents/FilesFilterLine/FilesFilterLine';
 
-import styles from './FilesPageComponent.module.css';
+import styles from '@/app/components/pageContentComponent/FilesPageComponent/FilesPageComponent.module.css';
 import {classNameGenerator} from '@/app/utils/functions';
 import FileComponentType from '@/app/components/listComponents/FileComponent/FileComponentType';
 

@@ -9,6 +9,7 @@
     gap: var(--index);
 }
 .avatarContainer {
+    width: auto;
     height: 100%;
     aspect-ratio: 1;
 
@@ -20,6 +21,7 @@
     overflow: hidden;
 }
 .textInfo {
+    width: auto;
     height: 100%;
 
     display: flex;

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import DashboardMemberComponentType from './DashboardMemberComponentType';
 import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
 
-import styles from './DashboardMemberComponent.module.css';
+import styles from '@/app/components/decorativeComponents/DashboardMemberComponent/DashboardMemberComponent.module.css';
 
 const DashboardMemberComponent: React.FC<DashboardMemberComponentType> = (
     {firstName, lastName, profession, avatarColor, avatarImageFile, memberLink}: DashboardMemberComponentType

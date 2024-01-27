@@ -1,5 +1,6 @@
 .filesFilterLine {
     width: 100%;
+    height: auto;
     margin-bottom: 30px;
     padding-right: 20px;
 
@@ -66,6 +67,7 @@
 }
 .folderOptionText {
     width: 75%;
+    height: auto;
     text-align: start;
     text-transform: capitalize;
 }

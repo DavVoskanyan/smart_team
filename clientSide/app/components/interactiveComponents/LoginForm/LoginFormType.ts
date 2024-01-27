@@ -1,5 +1,3 @@
-type LoginFormType = {
-
-}
+type LoginFormType = object;
 
 export default LoginFormType;

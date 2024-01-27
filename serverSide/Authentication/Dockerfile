@@ -2,7 +2,7 @@
 FROM node:latest
 
 # Mention work directory
-WORKDIR /app
+WORKDIR .
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
@@ -13,8 +13,8 @@ RUN npm install
 # Copy your entire project into the container
 COPY . .
 
+# Command to start the Next.js application
+CMD ["npm", "start"]
+
 # Expose the port that Next.js is running on
 EXPOSE 3000
-
-# Command to start the Next.js application
-CMD ["npm", "run", "dev"]

@@ -1,7 +1,7 @@
 import React from 'react';
 import InfoCardListItemType from './InfoCardListItemType';
 import Image from 'next/image';
-import styles from './InfoCardListItem.module.css';
+import styles from '@/app/components/listItemComponents/InfoCardListItem/InfoCardListItem.module.css';
 
 import phoneIcon from '@/public/images/icons/coloredPhoneIcon.svg';
 import mailIcon from '@/public/images/icons/coloredMailIcon.svg';

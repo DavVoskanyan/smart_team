@@ -17,6 +17,7 @@
 }
 .message {
     width: 70%;
+    height: auto;
     font-size: calc(var(--index) * 0.6);
 
     display: -webkit-box;

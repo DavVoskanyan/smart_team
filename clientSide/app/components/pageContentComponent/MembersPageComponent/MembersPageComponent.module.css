@@ -10,6 +10,7 @@
     justify-content: space-between;
 }
 .filterContainer {
+    width: auto;
     height: calc(var(--index) * 1.8);
 }
 .membersPrimaryContainer {
@@ -21,6 +22,7 @@
 }
 .membersSecondaryContainer {
     width: 100%;
+    height: auto;
     margin-top: 10px;
     padding-right: 20px;
 
