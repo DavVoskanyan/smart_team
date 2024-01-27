@@ -1,5 +1,3 @@
-type NavigationMenuType = {
-
-}
+type NavigationMenuType = object;
 
 export default NavigationMenuType;

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import HappyBirthdayType from './HappyBirthdayType';
 
-import styles from './HappyBirthday.module.css';
+import styles from '@/app/components/decorativeComponents/HappyBirthday/HappyBirthday.module.css';
 import decoration1 from '@/public/images/decoration1.svg';
 import decoration2 from '@/public/images/decoration2.svg';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import CharacteristicsComponentType from './CharacteristicsComponentType';
-import styles from './CharacteristicsComponent.module.css';
+import styles from '@/app/components/listComponents/CharacteristicsComponent/CharacteristicsComponent.module.css';
 import CharacteristicsCircle from '@/app/components/listItemComponents/CharacteristicsCircle/CharacteristicsCircle';
 import CharacteristicsCircleType from '@/app/components/listItemComponents/CharacteristicsCircle/CharacteristicsCircleType';
 const CharacteristicsComponent: React.FC<CharacteristicsComponentType> = (

@@ -3,7 +3,7 @@ import FoldersPageComponentType from './FoldersPageComponentType';
 
 import FolderComponent from '@/app/components/listComponents/FolderComponent/FolderComponent';
 
-import styles from './FoldersPageComponent.module.css';
+import styles from '@/app/components/pageContentComponent/FoldersPageComponent/FoldersPageComponent.module.css';
 import FolderComponentType from '@/app/components/listComponents/FolderComponent/FolderComponentType';
 
 const FoldersPageComponent: React.FC<FoldersPageComponentType> = (

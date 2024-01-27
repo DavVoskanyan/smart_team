@@ -1,7 +1,7 @@
 import React from 'react';
 import SocialLinkComponentType from './SocialLinkComponentType';
 
-import styles from './SocialLinkComponent.module.css';
+import styles from '@/app/components/listItemComponents/SocialLinkComponent/SocialLinkComponent.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 

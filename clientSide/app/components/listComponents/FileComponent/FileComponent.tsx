@@ -2,7 +2,7 @@ import React from 'react';
 import FileComponentType from './FileComponentType';
 import Image from 'next/image';
 
-import styles from './FileComponent.module.css';
+import styles from '@/app/components/listComponents/FileComponent/FileComponent.module.css';
 
 const FileComponent: React.FC<FileComponentType> = (
     {fileName}: FileComponentType

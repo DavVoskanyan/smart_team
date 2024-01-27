@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './page.module.css';
+import styles from '@/app/(pages)/(withLayoutPages)/team/page.module.css';
 import {classNameGenerator} from '@/app/utils/functions';
 import NotificationSidebar from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar';
 import MembersPageComponent from '@/app/components/pageContentComponent/MembersPageComponent/MembersPageComponent';

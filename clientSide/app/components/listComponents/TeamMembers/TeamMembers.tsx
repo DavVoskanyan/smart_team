@@ -2,7 +2,7 @@ import React from 'react';
 import TeamMembersType from './TeamMembersType';
 import Link from 'next/link';
 
-import styles from './TeamMembers.module.css';
+import styles from '@/app/components/listComponents/TeamMembers/TeamMembers.module.css';
 import DashboardMemberComponent from '@/app/components/decorativeComponents/DashboardMemberComponent/DashboardMemberComponent';
 import DashboardMemberComponentType
     from '@/app/components/decorativeComponents/DashboardMemberComponent/DashboardMemberComponentType';

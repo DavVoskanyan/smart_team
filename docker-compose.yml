@@ -2,7 +2,6 @@ version: '3'
 services:
 #   Frontend service using Next.js
   frontend:
-    image: node:20
     build:
       context: ./clientSide
     ports:
@@ -26,6 +25,11 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  authentication:
+    build:
+      context: ./serverSide/Authentication
+    ports:
+      - "3001:3000"
 
 volumes:
   mysql_data:

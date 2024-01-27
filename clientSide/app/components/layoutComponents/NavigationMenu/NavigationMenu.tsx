@@ -2,7 +2,7 @@
 
 import React, {Dispatch, SetStateAction, useState} from 'react';
 import NavigationMenuType from './NavigationMenuType';
-import styles from './NavigationMenu.module.css';
+import styles from '@/app/components/layoutComponents/NavigationMenu/NavigationMenu.module.css';
 import NavigationItem from '@/app/components/listItemComponents/NavigationItem/NavigationItem';
 
 const NavigationMenu: React.FC<NavigationMenuType> = (): React.ReactElement => {

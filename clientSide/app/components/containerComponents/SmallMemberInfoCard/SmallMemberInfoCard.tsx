@@ -1,7 +1,7 @@
 import React from 'react';
 import SmallMemberInfoCardType from './SmallMemberInfoCardType';
 
-import styles from './SmallMemberInfoCard.module.css';
+import styles from '@/app/components/containerComponents/SmallMemberInfoCard/SmallMemberInfoCard.module.css';
 
 const SmallMemberInfoCard: React.FC<SmallMemberInfoCardType> = (
     {cardTitle, children}: SmallMemberInfoCardType

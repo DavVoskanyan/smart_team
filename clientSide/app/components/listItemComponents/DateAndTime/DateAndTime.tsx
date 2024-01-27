@@ -2,7 +2,7 @@ import React from 'react';
 import {classNameGenerator, dateToStringParser} from '@/app/utils/functions';
 import DateAndTimeType from './DateAndTimeType';
 
-import styles from './DateAndTime.module.css';
+import styles from '@/app/components/listItemComponents/DateAndTime/DateAndTime.module.css';
 
 const DateAndTime: React.FC<DateAndTimeType> = (
     {withTime, date}: DateAndTimeType

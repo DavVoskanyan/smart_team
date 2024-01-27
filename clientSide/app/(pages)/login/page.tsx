@@ -1,7 +1,11 @@
-import styles from './page.module.css'
-import Image from "next/image";
+'use client';
+
+import React from 'react';
+
+import styles from '@/app/(pages)/login/page.module.css';
+import Image from 'next/image';
 import loginSideImage from '@/public/images/loginSideImage.jpg';
-import LoginForm from "@/app/components/interactiveComponents/LoginForm/LoginForm";
+import LoginForm from '@/app/components/interactiveComponents/LoginForm/LoginForm';
 
 export default function Home() {
     return (
@@ -9,8 +13,9 @@ export default function Home() {
             <Image
                 className={styles.sideImage}
                 src={ loginSideImage }
-                alt={ 'Side Image' }/>
+                alt={ 'Side Image' }
+                priority />
             <LoginForm />
         </main>
-    )
+    );
 }

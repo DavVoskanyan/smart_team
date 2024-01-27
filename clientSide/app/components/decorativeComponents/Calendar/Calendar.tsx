@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {classNameGenerator, dateToStringParser} from '@/app/utils/functions';
 import {DAYS_OF_WEEK_SHORT} from '@/app/utils/constants';
 
-import styles from './Calendar.module.css';
+import styles from '@/app/components/decorativeComponents/Calendar/Calendar.module.css';
 import winterImage from '@/public/images/winterCalendarImage.svg';
 
 const Calendar: React.FC<CalendarType> = (

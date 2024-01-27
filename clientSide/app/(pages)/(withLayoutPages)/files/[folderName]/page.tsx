@@ -4,7 +4,7 @@ import {classNameGenerator} from '@/app/utils/functions';
 import FilesPageComponent from '@/app/components/pageContentComponent/FilesPageComponent/FilesPageComponent';
 import NotificationSidebar from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar';
 
-import styles from './page.module.css';
+import styles from '@/app/(pages)/(withLayoutPages)/files/[folderName]/page.module.css';
 import ListItemType from '@/app/components/listItemComponents/ListItem/ListItemType';
 import FileComponentType from '@/app/components/listComponents/FileComponent/FileComponentType';
 

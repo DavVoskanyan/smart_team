@@ -7,7 +7,7 @@ import SearchInput from '@/app/components/interactiveComponents/SearchInput/Sear
 import MemberComponent from '@/app/components/listItemComponents/MemberComponent/MemberComponent';
 import FilterLine from '@/app/components/interactiveComponents/FilterLine/FilterLine';
 
-import styles from './MembersPageComponent.module.css';
+import styles from '@/app/components/pageContentComponent/MembersPageComponent/MembersPageComponent.module.css';
 import MemberComponentType from '@/app/components/listItemComponents/MemberComponent/MemberComponentType';
 
 

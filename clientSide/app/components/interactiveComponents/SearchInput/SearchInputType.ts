@@ -1,5 +1,3 @@
-type SearchInputType = {
-
-}
+type SearchInputType = object;
 
 export default SearchInputType;

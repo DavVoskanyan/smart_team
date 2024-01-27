@@ -5,7 +5,7 @@ import NavigationItemType from './NavigationItemType';
 import Image from 'next/image';
 import Link from 'next/link';
 import {classNameGenerator} from '@/app/utils/functions';
-import styles from './NavigationItem.module.css';
+import styles from '@/app/components/listItemComponents/NavigationItem/NavigationItem.module.css';
 
 const NavigationItem = (
     {itemName, iconFileName, changeActiveElement, index, isActive}: NavigationItemType

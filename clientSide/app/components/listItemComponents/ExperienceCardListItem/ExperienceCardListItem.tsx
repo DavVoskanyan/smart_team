@@ -2,7 +2,7 @@ import React from 'react';
 import ExperienceCardListItemType from './ExperienceCardListItemType';
 import {dateToStringParser} from '@/app/utils/functions';
 
-import styles from './ExperienceCardListItem.module.css';
+import styles from '@/app/components/listItemComponents/ExperienceCardListItem/ExperienceCardListItem.module.css';
 
 const ExperienceCardListItem: React.FC<ExperienceCardListItemType> = (
     {workStartDate, workPlaceName, position}: ExperienceCardListItemType

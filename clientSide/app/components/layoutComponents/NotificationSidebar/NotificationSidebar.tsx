@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './NotificationSidebar.module.css';
+import styles from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar.module.css';
 import ItemsList from '@/app/components/listComponents/ItemsList/ItemsList';
 import ringIcon from '@/public/images/icons/ringIcon.svg';
 import meetIcon from '@/public/images/icons/meetIcon.svg';

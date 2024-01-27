@@ -5,7 +5,7 @@ import LoginFormType from './LoginFormType';
 import Image from 'next/image';
 import {classNameGenerator} from '@/app/utils/functions';
 
-import styles from './LoginForm.module.css';
+import styles from '@/app/components/interactiveComponents/LoginForm/LoginForm.module.css';
 
 import mailIcon from '@/public/images/icons/mailIcon.svg';
 import lockIcon from '@/public/images/icons/lockIcon.svg';

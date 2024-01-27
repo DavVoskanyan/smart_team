@@ -1,7 +1,7 @@
 import React from 'react';
 import LayoutHeaderType from './LayoutHeaderType';
 
-import styles from './LayoutHeader.module.css';
+import styles from '@/app/components/layoutComponents/LayoutHeader/LayoutHeader.module.css';
 import HeaderUserCard from '@/app/components/decorativeComponents/HeaderUserCard/HeaderUserCard';
 
 const LayoutHeader: React.FC<LayoutHeaderType> = (

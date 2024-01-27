@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './page.module.css';
+import styles from '@/app/(pages)/(withLayoutPages)/member/[memberId]/page.module.css';
 
 import NotificationSidebar from '@/app/components/layoutComponents/NotificationSidebar/NotificationSidebar';
 import MemberInfoPageComponent from '@/app/components/pageContentComponent/MemberInfoPageComponent/MemberInfoPageComponent';

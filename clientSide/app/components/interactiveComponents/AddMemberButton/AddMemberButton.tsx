@@ -2,7 +2,7 @@ import React from 'react';
 import AddMemberButtonType from './AddMemberButtonType';
 import Image from 'next/image';
 
-import styles from './AddMemberButton.module.css';
+import styles from '@/app/components/interactiveComponents/AddMemberButton/AddMemberButton.module.css';
 import plusIcon from '@/public/images/icons/plusIcon.svg';
 
 const AddMemberButton: React.FC<AddMemberButtonType> = (): React.ReactElement => {

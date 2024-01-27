@@ -16,7 +16,7 @@ import threeColumnGridIcon from '@/public/images/icons/threeColumnGridIcon.svg';
 import threeColumnGridIconActive from '@/public/images/icons/threeColumnGridIconActive.svg';
 import grayChevronIcon from '@/public/images/icons/grayChevronIcon.svg';
 
-import styles from './FilesFilterLine.module.css';
+import styles from '@/app/components/interactiveComponents/FilesFilterLine/FilesFilterLine.module.css';
 
 const FilesFilterLine: React.FC<FilesFilterLineType> = (
     {folderName}: FilesFilterLineType

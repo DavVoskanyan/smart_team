@@ -1,7 +1,7 @@
 import React from 'react';
 import {dateToStringParser} from '@/app/utils/functions';
 import UserAvatar from '@/app/components/decorativeComponents/UserAvatar/UserAvatar';
-import styles from './AboutMemberInfoCard.module.css';
+import styles from '@/app/components/containerComponents/AboutMemberInfoCard/AboutMemberInfoCard.module.css';
 import AboutMemberInfoCardType from './AboutMemberInfoCardType';
 
 const AboutMemberInfoCard: React.FC<AboutMemberInfoCardType> = (

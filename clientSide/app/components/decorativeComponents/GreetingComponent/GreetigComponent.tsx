@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import GreetingComponentType from './GreetingComponentType';
 
-import styles from './GreetingComponent.module.css';
+import styles from '@/app/components/decorativeComponents/GreetingComponent/GreetingComponent.module.css';
 import smileImage from '@/public/images/smileImage.svg';
 
 const GreetingComponent: React.FC<GreetingComponentType> = (

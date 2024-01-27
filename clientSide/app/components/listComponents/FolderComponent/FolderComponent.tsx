@@ -5,7 +5,7 @@ import FolderComponentType from './FolderComponentType';
 import Image from 'next/image';
 import folderIcon from '@/public/images/icons/folderIcon.svg';
 
-import styles from './FolderComponent.module.css';
+import styles from '@/app/components/listComponents/FolderComponent/FolderComponent.module.css';
 import {useRouter} from 'next/navigation';
 import {AppRouterInstance} from 'next/dist/shared/lib/app-router-context.shared-runtime';
 

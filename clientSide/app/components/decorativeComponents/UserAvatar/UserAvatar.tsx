@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import UserAvatarType from './UserAvatarType';
 
-import styles from './UserAvatar.module.css';
+import styles from '@/app/components/decorativeComponents/UserAvatar/UserAvatar.module.css';
 
 
 const UserAvatar: React.FC<UserAvatarType> = (
