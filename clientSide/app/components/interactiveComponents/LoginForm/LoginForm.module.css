@@ -35,9 +35,11 @@
 
 .allInputsContainer {
     width: 100%;
+    height: auto;
 }
 .inputContainer {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -49,6 +51,7 @@
 .mailInput,
 .passwordInput {
     width: 100%;
+    height: auto;
     aspect-ratio: 6;
     margin-top: 10px;
     padding-inline: 16px;
@@ -72,6 +75,7 @@
 }
 .iconContainer {
     width: calc(16.5% - 1px);
+    height: auto;
     aspect-ratio: 1;
 
     background-color: var(--light-gray);
@@ -95,9 +99,11 @@
 }
 .buttonContainer {
     width: 100%;
+    height: auto;
 }
 .loginButton {
     width: 100%;
+    height: auto;
     aspect-ratio: 6;
 
     background-color: var(--main-color);

@@ -1,5 +1,6 @@
 .memberComponent {
     width: 100%;
+    height: auto;
     aspect-ratio: 5 / 6;
 
     background-color: var(--light-interacted);
@@ -29,6 +30,7 @@
 .memberComponent:hover { box-shadow: 4px 4px 10px 0 #C5CEDA; }
 .presenceIndicator {
     width: calc(var(--index) * 0.5);
+    height: auto;
     aspect-ratio: 1;
 
     background-color: var(--light-gray);
@@ -42,13 +44,17 @@
 .presenceIndicator.online { background-color: var(--is-online-color); }
 .avatarContainer {
     width: calc(var(--index) * 4);
+    height: auto;
     aspect-ratio: 1;
 
     border-radius: 50%;
 
     overflow: hidden;
 }
-.memberComponent.listViewComponent > .avatarContainer { width: calc(var(--index) * 2.7); }
+.memberComponent.listViewComponent > .avatarContainer {
+    width: calc(var(--index) * 2.7);
+    height: auto;
+}
 .textInfo {
     display: flex;
     flex-direction: column;

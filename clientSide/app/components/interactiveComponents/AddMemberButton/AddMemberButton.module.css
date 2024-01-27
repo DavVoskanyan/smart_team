@@ -6,6 +6,7 @@
 }
 .addMemberButton {
     width: calc(var(--index) * 1.8);
+    height: auto;
     aspect-ratio: 1;
 
     background-color: var(--main-color);

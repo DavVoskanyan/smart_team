@@ -21,30 +21,35 @@
 }
 
 .size20 {
+    width: auto;
     height: 28%;
     left: 50%;
     top: 70%;
     z-index: var(--characteristics-over-z-index);
 }
 .size40 {
+    width: auto;
     height: 33%;
     left: 50%;
     top: 3%;
     z-index: var(--characteristics-over-z-index);
 }
 .size60 {
+    width: auto;
     height: 38%;
     left: 21%;
     top: 60%;
     z-index: var(--characteristics-under-z-index);
 }
 .size80 {
+    width: auto;
     height: 43%;
     left: 63%;
     top: 37%;
     z-index: var(--characteristics-under-z-index);
 }
 .size100 {
+    width: auto;
     height: 48%;
     left: 18%;
     top: 1%;

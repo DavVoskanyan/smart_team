@@ -13,6 +13,7 @@
     gap: calc(var(--index) * 2);
 }
 .avatarContainer {
+    width: auto;
     height: 100%;
     aspect-ratio: 1;
 
