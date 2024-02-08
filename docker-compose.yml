@@ -28,13 +28,29 @@ services:
     ports:
       - "3001:3000"
 
-  user_services:
+  user_service:
     build:
       context: ./serverSide/UserService
     volumes:
       - ./clientSide/:/app
     ports:
-      - "3000:3000"
+      - "3002:3000"
+
+  company_service:
+    build:
+      context: ./serverSide/CompanyService
+    volumes:
+      - ./clientSide/:/app
+    ports:
+      - "3003:3000"
+
+  notification_service:
+    build:
+      context: ./serverSide/NotificationService
+    volumes:
+      - ./clientSide/:/app
+    ports:
+      - "3003:3000"
 
 volumes:
   mysql_data:
