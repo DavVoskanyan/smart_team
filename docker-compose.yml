@@ -4,6 +4,8 @@ services:
   frontend:
     build:
       context: ./clientSide
+    volumes:
+      - ./clientSide/:/app
     ports:
       - "3000:3000"
 #    depends_on:
