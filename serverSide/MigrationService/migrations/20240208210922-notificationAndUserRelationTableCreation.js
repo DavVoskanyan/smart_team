@@ -1,25 +1,26 @@
 'use strict';
 
-const TABLE_NAME = 'notification_type';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable(TABLE_NAME, {
-      id: {
+    await queryInterface.createTable('notification_and_user_relation', {
+      notification_id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-        autoIncrement: true,
-      },
-      title: {
-        type: Sequelize.STRING,
         allowNull: false,
       },
-    });
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+    })
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable(TABLE_NAME);
+    /**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */
   }
 };

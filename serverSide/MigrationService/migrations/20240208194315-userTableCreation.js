@@ -1,15 +1,20 @@
 'use strict';
 
-const TABLE_NAME = 'account';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable(TABLE_NAME, {
+    await queryInterface.createTable('users', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
+      },
+      first_name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      last_name: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       email: {
@@ -21,6 +26,10 @@ module.exports = {
         allowNull: false,
         defaultValue: false,
       },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       phone_number: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -29,48 +38,50 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      description: {
-        type: Sequelize.TEXT,
-      },
-      company_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      user_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      department_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      account_creation_date: {
+      birthdate: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      description: {
+        type: Sequelize.TEXT,
+        allowNull: false,
       },
       avatar_image_file_name: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       avatar_background_color: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
-      is_online: {
+      is_dark_mode_on: {
         type: Sequelize.BOOLEAN,
+        allowNull: false,
         defaultValue: false,
       },
       is_admin: {
         type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      },
+      creation_date: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: new Date(),
       },
       is_deleted: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: false,
       },
-    });
+      deletion_date: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      }
+    })
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable(TABLE_NAME);
+    await queryInterface.dropTable('users');
   }
 };

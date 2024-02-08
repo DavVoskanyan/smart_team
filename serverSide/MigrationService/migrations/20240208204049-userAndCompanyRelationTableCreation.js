@@ -1,40 +1,39 @@
 'use strict';
 
-const TABLE_NAME = 'work_experience';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable(TABLE_NAME, {
-      id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-        autoIncrement: true,
-      },
-      account_id: {
+    await queryInterface.createTable('user_and_company_relation', {
+      company_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      company_name: {
-        type: Sequelize.STRING,
+      user_id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
-      position_name: {
-        type: Sequelize.STRING,
+      department_id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
-      start_date: {
+      creation_date: {
         type: Sequelize.DATE,
         allowNull: false,
+        defaultValue: new Date(),
       },
-      end_date: {
+      is_deleted: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      },
+      deletion_date: {
         type: Sequelize.DATE,
+        allowNull: true,
       },
-    });
+    })
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable(TABLE_NAME);
+    await queryInterface.dropTable('user_and_company_relation')
   }
 };
