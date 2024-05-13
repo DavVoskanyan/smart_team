@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "smart_team_database",
+    "dialect": "mysql",
+    "migrations": "src/"
+  },
+  "test": {
+    "username": "smart_team",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "smart_team",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
