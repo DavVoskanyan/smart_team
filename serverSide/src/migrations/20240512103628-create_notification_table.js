@@ -15,12 +15,17 @@ module.exports = {
             id: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
+                autoIncrement: true,
             },
             text: {
                 type: Sequelize.TEXT,
                 allowNull: false,
             },
             event_start_date: {
+                type: Sequelize.DATE,
+                allowNull: true,
+            },
+            event_end_date: {
                 type: Sequelize.DATE,
                 allowNull: true,
             },

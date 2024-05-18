@@ -13,7 +13,7 @@ module.exports = {
         await queryInterface.createTable('are_users_online', {
             user_id: {
                 type: Sequelize.INTEGER,
-                primaryKey: true,
+                allowNull: false,
             },
             is_online: {
                 type: Sequelize.BOOLEAN,

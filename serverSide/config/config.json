@@ -3,8 +3,8 @@
     "username": "root",
     "password": "pass",
     "database": "smart_team_database",
-    "host": "smart_team_database",
-    "dialect": "mysql",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
     "migrations": "src/"
   },
   "test": {
@@ -12,13 +12,13 @@
     "password": "pass",
     "database": "smart_team_database",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   },
   "production": {
     "username": "smart_team",
     "password": "pass",
     "database": "smart_team_database",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   }
 }

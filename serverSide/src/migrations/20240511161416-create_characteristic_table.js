@@ -14,6 +14,7 @@ module.exports = {
             id: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
+                autoIncrement: true,
             },
             title: {
                 type: Sequelize.STRING,
@@ -43,6 +44,6 @@ module.exports = {
          * await queryInterface.dropTable('users');
          */
 
-        await queryInterface.createTable('characteristics', {})
+        await queryInterface.dropTable('characteristics', {})
     }
 };

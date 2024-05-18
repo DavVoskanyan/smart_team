@@ -14,6 +14,7 @@ module.exports = {
             id: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
+                autoIncrement: true,
             },
             main_hex: {
                 type: Sequelize.INTEGER,
