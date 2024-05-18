@@ -20,6 +20,12 @@ const LoginForm: React.FC<LoginFormType> = (): React.ReactElement => {
 
     function loginButtonCLickHandler(eventObject: React.MouseEvent): void {
         eventObject.preventDefault();
+        // fetch('http://authentication:3000/auth/register', {
+        //     method: 'POST'
+        // })
+        //     .then(jsonData => jsonData.json())
+        //     .then(data => console.log(data))
+        //     .catch(error => console.log(error.message));
         router.push('/dashboard');
     }
 

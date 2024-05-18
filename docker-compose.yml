@@ -1,20 +1,27 @@
-version: '3'
 services:
-#   Frontend service using Next.js
-  frontend:
+
+  # Frontend service
+  smart_team_client_side:
+    container_name: smart_team_frontend
     build:
       context: ./clientSide
+    volumes:
+      - ./clientSide/:/app
     ports:
       - "3000:3000"
-#    depends_on:
-#      - backend
-#    environment:
-#      - BACKEND_URL=http://backend:8080
 
+  # Backend service
+  smart_team_server_side:
+    container_name: smart_team_backend
+    build:
+      context: ./serverSide
+    ports:
+      - "3001:3000"
 
-  # mysql database service
-  database:
-    image: mysql:latest
+  # Mariadb database
+  smart_team_database:
+    container_name: smart_team_database
+    image: mariadb:lts
     environment:
       MYSQL_ROOT_PASSWORD: pass
       MYSQL_DATABASE: smart_team_database
@@ -25,11 +32,6 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
-  authentication:
-    build:
-      context: ./serverSide/Authentication
-    ports:
-      - "3001:3000"
 
 volumes:
   mysql_data:

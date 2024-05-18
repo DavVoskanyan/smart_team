@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "migrations": "src/"
+  },
+  "test": {
+    "username": "smart_team",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "mariadb"
+  },
+  "production": {
+    "username": "smart_team",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "mariadb"
+  }
+}
