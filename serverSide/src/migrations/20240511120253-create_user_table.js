@@ -57,6 +57,7 @@ module.exports = {
             avatar_image_file: {
                 type: Sequelize.STRING,
                 allowNull: false,
+                defaultValue: '',
             },
             avatar_background_color_id: {
                 type: Sequelize.INTEGER,
