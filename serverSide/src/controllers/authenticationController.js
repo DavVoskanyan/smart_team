@@ -1,52 +1,57 @@
 const authenticationService = require('../services/authenticationService');
 const User = require('../models/user.model');
 const Sequelize = require("sequelize");
+const bcrypt = require('bcryptjs');
+const UserForm = require("../forms/UserForm");
+const UserRepository = require("../repositories/user.repository");
+const ResponseStatusCodeService = require("../services/ResponseStatusCodeService");
 
 class AuthenticationController {
     static register = async (req, res) => {
-        try {
-            let user = await User.create({
-                first_name: 'David',
-                last_name: 'voskanyan',
-                birthdate: new Date(),
-                email: 'helloworld@smp.am',
-                is_email_verified: true,
-                password:'helloWorld',
-                phone:'077005552',
-                address:'address',
-                description: 'description',
-                avatar_image_file:'',
-                avatar_background_color_id:1,
-                theme_id:1,
-                is_admin:true,
-                creation_date: new Date(),
-                is_deleted: false
-            });
-            res.status(201).json(user);
+        let userFormInstance = new UserForm();
+        userFormInstance.loadData(req.body);
+        userFormInstance.password = await bcrypt.hash(req.body.password, 12);
 
-        } catch (error) {
-            res.status(400).json({message: error.message});
+        let existingUser = await User.findOne({ where: { email: userFormInstance.email } });
+        if (existingUser) {
+            return res.status(ResponseStatusCodeService.ALREADY_EXISTS).json({message: 'User already exists'});
         }
-    }
-    static login = (req, res) => {
-        const { username, password } = req.body;
-        const user = { id: 1, name: 'John Doe', email: 'john@example.com' };
-        const token = authenticationService.generateToken(user);
 
-        res.json({ token });
-    }
-    static logout = (req, res) => {
+        await UserRepository.createUser(userFormInstance.getDto());
+        let generatedToken = authenticationService.generateToken(userFormInstance.email);
 
+        res.setHeader('Authorization', `Bearer ${generatedToken}`);
+        return res.status(ResponseStatusCodeService.CREATED).json({status: true, message: 'User created'});
     }
-    static getProfile = (req, res) => {
-        const user = req.user;
-        res.json({ user });
+    static login = async (req, res) => {
+        let userEmail = req.body.email;
+        let userPassword = req.body.password;
+
+        let user = await User.findOne({ where: { email: userEmail } });
+        if(!user) { return res.status(404).json({message: 'User not found'}); }
+
+        let isPasswordSame = await bcrypt.compare(userPassword, user.password);
+        if(!isPasswordSame) {
+            return res.status(ResponseStatusCodeService.UNAUTHORIZED).json({message: 'Email or password is wrong'});
+        }
+        const generatedToken = authenticationService.generateToken(userEmail);
+
+        res.setHeader('Authorization', `Bearer ${generatedToken}`);
+        return res.status(ResponseStatusCodeService.OK).json({status: true, message: 'User login successfully'});
     }
+
+    // static logout = (req, res) => {
+    //
+    // }
+    // static getProfile = (req, res) => {
+    //     const user = req.user;
+    //     res.json({user});
+    // }
 }
 
 const getProfile = (req, res) => {
     const user = req.user;
-    res.json({ user });
+    res.json({user});
 };
 
 module.exports = AuthenticationController;
