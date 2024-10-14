@@ -57,10 +57,18 @@ const User = sequelize.define(
         avatar_background_color_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Color',
+                key: 'id',
+            },
         },
         theme_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Theme',
+                key: 'id',
+            },
         },
         is_super_user: {
             type: Sequelize.BOOLEAN,
@@ -89,5 +97,6 @@ const User = sequelize.define(
         updatedAt: false,
     }
 );
+
 
 module.exports = User;

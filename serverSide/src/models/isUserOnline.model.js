@@ -7,6 +7,10 @@ const isUserOnline = sequelize.define(
         user_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'User',
+                key: 'id',
+            },
         },
         is_online: {
             type: Sequelize.BOOLEAN,

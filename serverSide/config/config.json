@@ -5,7 +5,8 @@
     "database": "smart_team_database",
     "host": "127.0.0.1",
     "dialect": "mariadb",
-    "migrations": "src/"
+    "migrations": "database/",
+    "seeders": "database/"
   },
   "test": {
     "username": "smart_team",

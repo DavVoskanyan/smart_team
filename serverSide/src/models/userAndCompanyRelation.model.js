@@ -7,14 +7,26 @@ const UserAndCompanyRelation = sequelize.define(
         user_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'User',
+                key: 'id',
+            },
         },
         company_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Company',
+                key: 'id',
+            },
         },
         department_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Department',
+                key: 'id',
+            },
         },
         creation_date: {
             type: Sequelize.DATE,

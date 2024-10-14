@@ -3,7 +3,7 @@ class BaseForm {
     rules = {
         regexpValidation: [ ],
         requiredValidation: [ ]
-    }
+    };
 
     loadData = (dto) => {
         Object.keys(dto).forEach(dtoKey => {
@@ -18,7 +18,7 @@ class BaseForm {
             if(rule.regex.test(this[rule.field])) { validationResult = false; }
         });
         this.rules.requiredValidation.forEach(requiredField => {
-            if(!this[requiredField] || this[requiredField].trim() === '') { validationResult = false; }
+            if(!this[requiredField] || this[requiredField].toString().trim() === '') { validationResult = false; }
         });
 
         return validationResult;
