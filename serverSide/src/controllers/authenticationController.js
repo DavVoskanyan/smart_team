@@ -1,6 +1,5 @@
 const authenticationService = require('../services/authenticationService');
 const User = require('../models/user.model');
-const Sequelize = require("sequelize");
 const bcrypt = require('bcryptjs');
 const UserForm = require("../forms/UserForm");
 const UserRepository = require("../repositories/user.repository");
@@ -48,10 +47,5 @@ class AuthenticationController {
     //     res.json({user});
     // }
 }
-
-const getProfile = (req, res) => {
-    const user = req.user;
-    res.json({user});
-};
 
 module.exports = AuthenticationController;

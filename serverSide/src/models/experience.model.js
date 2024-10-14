@@ -1,10 +1,3 @@
-// id integer [primary key]
-// user_id integer
-// company_name string
-// position_name string
-// work_start_date timestamp
-// work_end_date timestamp
-
 const Sequelize = require('sequelize');
 const sequelize = require('../../sequelize.config');
 
@@ -34,6 +27,10 @@ const Experience = sequelize.define(
         user_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'User',
+                key: 'id',
+            },
         },
         creation_date: {
             type: Sequelize.DATE,

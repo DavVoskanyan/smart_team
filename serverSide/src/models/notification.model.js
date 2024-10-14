@@ -27,10 +27,18 @@ const Notification = sequelize.define(
         type_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'NotificationType',
+                key: 'id',
+            },
         },
         company_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Company',
+                key: 'id',
+            },
         },
         creation_date: {
             type: Sequelize.DATE,
@@ -45,4 +53,4 @@ const Notification = sequelize.define(
     }
 );
 
-exports.Notification = Notification;
+module.exports = Notification;

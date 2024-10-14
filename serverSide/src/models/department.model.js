@@ -15,6 +15,10 @@ const Department = sequelize.define(
         company_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Company',
+                key: 'id',
+            },
         },
         creation_date: {
             type: Sequelize.DATE,

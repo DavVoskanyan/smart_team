@@ -15,6 +15,10 @@ const Characteristic = sequelize.define(
         user_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'User',
+                key: 'id',
+            },
         },
         is_deleted: {
             type: Sequelize.BOOLEAN,

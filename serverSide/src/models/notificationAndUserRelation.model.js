@@ -7,10 +7,18 @@ const NotificationAndUserRelation = sequelize.define(
         notification_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'Notification',
+                key: 'id',
+            },
         },
         user_id: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            references: {
+                model: 'User',
+                key: 'id',
+            },
         },
         creation_date: {
             type: Sequelize.DATE,
