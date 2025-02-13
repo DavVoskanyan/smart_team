@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    up: async () => {
+    up: async (queryInterface) => {
         await queryInterface.addConstraint('space_invitations', {
             fields: ['user_id'],
             type: 'foreign key',
