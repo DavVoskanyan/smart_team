@@ -1,42 +1,32 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class Chat extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example: this.belongsTo(models.ChatType, { foreignKey: 'chat_type_id' });
+            // Example: this.belongsTo(models.User, { foreignKey: 'creator_id' });
         }
     }
 
-    Color.init(
+    Chat.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            chat_type_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            name: {
+                type: DataTypes.STRING(255),
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            blue: {
-                type: DataTypes.SMALLINT,
+            creator_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +48,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'Chat',
+            tableName: 'chats',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return Chat;
 };

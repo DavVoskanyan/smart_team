@@ -1,42 +1,29 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class MessageReaction extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example:
+            // this.belongsTo(models.Message, { foreignKey: 'message_id' });
+            // this.belongsTo(models.User, { foreignKey: 'user_id' });
+            // this.belongsTo(models.ReactionType, { foreignKey: 'reaction_type_id' });
         }
     }
 
-    Color.init(
+    MessageReaction.init(
         {
-            id: {
-                type: DataTypes.BIGINT,
-                primaryKey: true,
+            message_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            user_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            reaction_type_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +45,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'MessageReaction',
+            tableName: 'message_reactions',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return MessageReaction;
 };

@@ -1,31 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Interest extends Model {
+    class ReactionType extends Model {
         static associate(models) {
             // Define associations here, if any
-            // Example: this.belongsTo(models.User, { foreignKey: 'user_id' });
+            // Example:
+            // this.hasMany(models.MessageReaction, { foreignKey: 'reaction_type_id' });
         }
     }
 
-    Interest.init(
+    ReactionType.init(
         {
-            id: {
-                type: DataTypes.BIGINT,
-                primaryKey: true,
-                allowNull: false,
-            },
-            name: {
-                type: DataTypes.STRING(100),
-                allowNull: false,
-                validate: {
-                    notEmpty: true, // Ensures the name field is not empty
-                },
-            },
-            user_id: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-            },
             creation_date: {
                 type: DataTypes.DATE,
                 defaultValue: DataTypes.NOW,
@@ -46,11 +31,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Interest',
-            tableName: 'interests',
+            modelName: 'ReactionType',
+            tableName: 'reaction_types',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Interest;
+    return ReactionType;
 };

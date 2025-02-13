@@ -1,25 +1,25 @@
 {
   "development": {
-    "username": "root",
+    "username": "team",
     "password": "pass",
     "database": "smart_team_database",
     "host": "127.0.0.1",
-    "dialect": "mariadb",
+    "dialect": "postgres",
     "migrations": "database/",
     "seeders": "database/"
   },
   "test": {
-    "username": "smart_team",
+    "username": "team",
     "password": "pass",
     "database": "smart_team_database",
     "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "dialect": "postgres"
   },
   "production": {
-    "username": "smart_team",
+    "username": "team",
     "password": "pass",
     "database": "smart_team_database",
     "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "dialect": "postgres"
   }
 }

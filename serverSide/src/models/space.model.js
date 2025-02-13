@@ -1,42 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class Space extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example: this.belongsTo(models.User, { foreignKey: 'owner_id' });
         }
     }
 
-    Color.init(
+    Space.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            name: {
+                type: DataTypes.STRING(255),
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            owner_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +43,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'Space',
+            tableName: 'spaces',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return Space;
 };

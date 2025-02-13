@@ -1,42 +1,28 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class MessageAttachedFile extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example:
+            // this.belongsTo(models.Message, { foreignKey: 'message_id' });
         }
     }
 
-    Color.init(
+    MessageAttachedFile.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            message_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            attached_file: {
+                type: DataTypes.STRING(255),
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +44,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'MessageAttachedFile',
+            tableName: 'message_attached_files',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return MessageAttachedFile;
 };

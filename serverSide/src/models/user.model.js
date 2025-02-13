@@ -1,102 +1,99 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../../sequelize.config');
+const { Model, DataTypes } = require('sequelize');
 
-const User = sequelize.define(
-    'User',
-    {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-        },
-        first_name: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        last_name: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        birthdate: {
-            type: Sequelize.DATE,
-            allowNull: false,
-        },
-        email: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            unique: true,
-        },
-        is_email_verified: {
-            type: Sequelize.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,
-        },
-        password: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        phone: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            defaultValue: '',
-        },
-        address: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            defaultValue: '',
-        },
-        description: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            defaultValue: '',
-        },
-        avatar_image_file: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            defaultValue: '',
-        },
-        avatar_background_color_id: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'Color',
-                key: 'id',
-            },
-        },
-        theme_id: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'Theme',
-                key: 'id',
-            },
-        },
-        is_super_user: {
-            type: Sequelize.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,
-        },
-        creation_date: {
-            type: Sequelize.DATE,
-            allowNull: true,
-            defaultValue: Sequelize.NOW,
-        },
-        is_deleted: {
-            type: Sequelize.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,
-        },
-        deletion_date: {
-            type: Sequelize.DATE,
-            allowNull: true,
-        },
-    },
-    {
-        tableName: 'users',
-        timestamps: true,
-        createdAt: 'creation_date',
-        updatedAt: false,
+module.exports = (sequelize) => {
+    class User extends Model {
+        static associate(models) {
+            // Define associations here, if any
+            // Example: this.hasMany(models.Post, { foreignKey: 'user_id' });
+        }
     }
-);
 
-
-module.exports = User;
+    User.init(
+        {
+            id: {
+                type: DataTypes.BIGINT,
+                primaryKey: true,
+                allowNull: false,
+            },
+            first_name: {
+                type: DataTypes.STRING(100),
+                allowNull: true,
+            },
+            last_name: {
+                type: DataTypes.STRING(100),
+                allowNull: true,
+            },
+            is_verified: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: false,
+            },
+            email: {
+                type: DataTypes.STRING(255),
+                allowNull: false,
+                unique: true,
+            },
+            is_email_verified: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: false,
+            },
+            password: {
+                type: DataTypes.STRING(255),
+                allowNull: false,
+            },
+            phone: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            address: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            birthdate: {
+                type: DataTypes.DATEONLY,
+                allowNull: true,
+            },
+            profile_image_file: {
+                type: DataTypes.STRING(255),
+                allowNull: true,
+            },
+            color_id: {
+                type: DataTypes.INTEGER,
+                allowNull: true,
+            },
+            theme_id: {
+                type: DataTypes.INTEGER,
+                allowNull: true,
+            },
+            description: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            creation_date: {
+                type: DataTypes.DATE,
+                defaultValue: DataTypes.NOW,
+            },
+            modification_date: {
+                type: DataTypes.DATE,
+                defaultValue: DataTypes.NOW,
+            },
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: false,
+            },
+            deletion_date: {
+                type: DataTypes.DATE,
+                allowNull: true,
+            },
+        },
+        {
+            sequelize,
+            modelName: 'User',
+            tableName: 'users',
+            timestamps: false, // Set to true if you want Sequelize to manage createdAt/updatedAt automatically
+        }
+    );
+    return User;
+};

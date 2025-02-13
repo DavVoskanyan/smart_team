@@ -1,42 +1,28 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class PostLike extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example: this.belongsTo(models.Post, { foreignKey: 'post_id' });
+            // Example: this.belongsTo(models.User, { foreignKey: 'user_id' });
         }
     }
 
-    Color.init(
+    PostLike.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            post_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            user_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +44,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'PostLike',
+            tableName: 'post_likes',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return PostLike;
 };

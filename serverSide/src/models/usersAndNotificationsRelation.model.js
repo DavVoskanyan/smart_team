@@ -1,42 +1,28 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class UsersAndNotificationsRelation extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example:
+            // this.belongsTo(models.User, { foreignKey: 'user_id' });
+            // this.belongsTo(models.Notification, { foreignKey: 'notification_id' });
         }
     }
 
-    Color.init(
+    UsersAndNotificationsRelation.init(
         {
-            id: {
-                type: DataTypes.BIGINT,
-                primaryKey: true,
+            user_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            notification_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
+            notification_seen_date: {
+                type: DataTypes.DATE,
+                allowNull: true,
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +44,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'UsersAndNotificationsRelation',
+            tableName: 'users_and_notifications_relation',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return UsersAndNotificationsRelation;
 };

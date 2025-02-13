@@ -1,21 +1,15 @@
-const { Model, DataTypes } = require('sequelize');
+'use strict';
 
-module.exports = (sequelize) => {
-    class Color extends Model {
-        static associate(models) {
-            // Define associations here, if any
-        }
-    }
-
-    Color.init(
-        {
+module.exports = {
+    up: async (queryInterface, Sequelize) => {
+        await queryInterface.createTable('colors', {
             id: {
-                type: DataTypes.BIGINT,
+                type: Sequelize.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
             red: {
-                type: DataTypes.SMALLINT,
+                type: Sequelize.SMALLINT,
                 allowNull: false,
                 validate: {
                     min: 0,
@@ -23,7 +17,7 @@ module.exports = (sequelize) => {
                 },
             },
             green: {
-                type: DataTypes.SMALLINT,
+                type: Sequelize.SMALLINT,
                 allowNull: false,
                 validate: {
                     min: 0,
@@ -31,7 +25,7 @@ module.exports = (sequelize) => {
                 },
             },
             blue: {
-                type: DataTypes.SMALLINT,
+                type: Sequelize.SMALLINT,
                 allowNull: false,
                 validate: {
                     min: 0,
@@ -39,30 +33,26 @@ module.exports = (sequelize) => {
                 },
             },
             creation_date: {
-                type: DataTypes.DATE,
-                defaultValue: DataTypes.NOW,
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
             },
             modification_date: {
-                type: DataTypes.DATE,
-                defaultValue: DataTypes.NOW,
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
             },
             is_deleted: {
-                type: DataTypes.BOOLEAN,
+                type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
             },
             deletion_date: {
-                type: DataTypes.DATE,
+                type: Sequelize.DATE,
                 allowNull: true,
             },
-        },
-        {
-            sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
-            timestamps: false, // Disable automatic timestamps
-        }
-    );
+        });
+    },
 
-    return Color;
+    down: async () => {
+        await queryInterface.dropTable('colors');
+    }
 };

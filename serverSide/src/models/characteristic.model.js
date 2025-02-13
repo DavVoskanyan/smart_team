@@ -1,39 +1,56 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../../sequelize.config');
+const { Model, DataTypes } = require('sequelize');
 
-const Characteristic = sequelize.define(
-    'Characteristic',
-    {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-        },
-        title: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        user_id: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'User',
-                key: 'id',
+module.exports = (sequelize) => {
+    class Characteristic extends Model {
+        static associate(models) {
+            // Define associations here, if any
+            // Example: this.belongsTo(models.User, { foreignKey: 'user_id' });
+        }
+    }
+
+    Characteristic.init(
+        {
+            id: {
+                type: DataTypes.BIGINT,
+                primaryKey: true,
+                allowNull: false,
+            },
+            name: {
+                type: DataTypes.STRING(100),
+                allowNull: false,
+                validate: {
+                    notEmpty: true, // Ensures the name field is not empty
+                },
+            },
+            user_id: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
+            creation_date: {
+                type: DataTypes.DATE,
+                defaultValue: DataTypes.NOW,
+            },
+            modification_date: {
+                type: DataTypes.DATE,
+                defaultValue: DataTypes.NOW,
+            },
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: false,
+            },
+            deletion_date: {
+                type: DataTypes.DATE,
+                allowNull: true,
             },
         },
-        is_deleted: {
-            type: Sequelize.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,
-        },
-        deletion_date: {
-            type: Sequelize.DATE,
-            allowNull: true,
+        {
+            sequelize,
+            modelName: 'Characteristic',
+            tableName: 'characteristics',
+            timestamps: false, // Disable automatic timestamps
         }
-    },
-    {
-        timestamps: false,
-        tableName: 'characteristics',
-    }
-);
+    );
 
-module.exports = Characteristic;
+    return Characteristic;
+};
