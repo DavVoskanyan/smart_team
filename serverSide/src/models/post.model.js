@@ -1,42 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class Post extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example: this.belongsTo(models.Space, { foreignKey: 'space_id' });
         }
     }
 
-    Color.init(
+    Post.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
+            text: {
+                type: DataTypes.TEXT,
+                allowNull: true,
             },
-            green: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
+            space_id: {
+                type: DataTypes.INTEGER,
+                allowNull: true,
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -48,7 +33,6 @@ module.exports = (sequelize) => {
             },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
-                allowNull: false,
                 defaultValue: false,
             },
             deletion_date: {
@@ -58,11 +42,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'Post',
+            tableName: 'posts',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return Post;
 };

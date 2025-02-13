@@ -1,42 +1,37 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class SpaceInvitation extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example: this.belongsTo(models.User, { foreignKey: 'user_id' });
+            // Example: this.belongsTo(models.Space, { foreignKey: 'space_id' });
+            // Example: this.belongsTo(models.User, { foreignKey: 'inviter_id', as: 'inviter' });
         }
     }
 
-    Color.init(
+    SpaceInvitation.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            user_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            space_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            blue: {
-                type: DataTypes.SMALLINT,
+            inviter_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
+            },
+            expiration_date: {
+                type: DataTypes.DATE,
+                allowNull: false,
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +53,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'SpaceInvitation',
+            tableName: 'space_invitations',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return SpaceInvitation;
 };

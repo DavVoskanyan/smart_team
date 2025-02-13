@@ -1,42 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class PostAttachedImage extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example: this.belongsTo(models.Post, { foreignKey: 'post_id' });
         }
     }
 
-    Color.init(
+    PostAttachedImage.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            post_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            image_name: {
+                type: DataTypes.STRING(255),
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +43,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'PostAttachedImage',
+            tableName: 'post_attached_images',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return PostAttachedImage;
 };

@@ -1,42 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Color extends Model {
+    class RolePermission extends Model {
         static associate(models) {
             // Define associations here, if any
+            // Example: this.belongsTo(models.Role, { foreignKey: 'role_id' });
         }
     }
 
-    Color.init(
+    RolePermission.init(
         {
             id: {
                 type: DataTypes.BIGINT,
                 primaryKey: true,
                 allowNull: false,
             },
-            red: {
-                type: DataTypes.SMALLINT,
+            role_id: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
-            green: {
-                type: DataTypes.SMALLINT,
+            permission: {
+                type: DataTypes.STRING(100),
                 allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
-            },
-            blue: {
-                type: DataTypes.SMALLINT,
-                allowNull: false,
-                validate: {
-                    min: 0,
-                    max: 255,
-                },
             },
             creation_date: {
                 type: DataTypes.DATE,
@@ -58,11 +43,11 @@ module.exports = (sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Color',
-            tableName: 'colors',
+            modelName: 'RolePermission',
+            tableName: 'role_permissions',
             timestamps: false, // Disable automatic timestamps
         }
     );
 
-    return Color;
+    return RolePermission;
 };
