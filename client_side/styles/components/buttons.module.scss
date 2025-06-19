@@ -1,0 +1,15 @@
+@use '../mixins' as *;
+
+//   D I F F E R E N T   C O L O R   B U T T O N S
+.mainColorButton {
+  @include button(var(--application-main-color), var(--regular-text-color));
+}
+
+//   D I F F E R E N T   U S A G E   B U T T O N S
+.fullLengthFormButton {
+  width: 100%;
+  height: var(--input-height);
+  margin-top: var(--spacing-6);
+
+  border-radius: 5px;
+}

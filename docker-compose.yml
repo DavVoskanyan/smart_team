@@ -2,22 +2,30 @@ version: '1.0'
 services:
 
   # Frontend service
-  smart_team_client_side:
-    container_name: smart_team_frontend
+  smart_team_clientside:
+    container_name: smart_team_clientside
     build:
-      context: ./clientSide
+      context: client_side
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.client_side.rule=Host(`smartteam.local`)"
+      - "traefik.http.services.client_side.loadbalancer.server.port=3000"
     volumes:
-      - ./clientSide/:/app
-    ports:
-      - "3000:3000"
+      - ./client_side/:/app
+    networks:
+      - smart_team_network
 
   # Backend service
-  smart_team_server_side:
-    container_name: smart_team_backend
+  smart_team_serverside:
+    container_name: smart_team_serverside
     build:
-      context: ./serverSide
-    ports:
-      - "3001:3000"
+      context: ./server_side
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.server_side.rule=Host(`smartteam.api.local`)"
+      - "traefik.http.services.server_side.loadbalancer.server.port=3000"
+    networks:
+      - smart_team_network
 
   # Postgres database
   smart_team_database:
@@ -31,7 +39,26 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - smart_team_network
 
+  traefik:
+    image: traefik:v3.0
+    command:
+      - --api.dashboard=true
+      - --providers.docker=true
+      - --entrypoints.web.address=:80
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml
+    networks:
+      - smart_team_network
 
 volumes:
   postgres_data:
+
+networks:
+  smart_team_network:
+    driver: bridge

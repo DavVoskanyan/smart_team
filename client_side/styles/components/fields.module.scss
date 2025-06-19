@@ -1,0 +1,32 @@
+@use '../mixins' as *;
+
+//   D I F F E R E N T   U S A G E   B U T T O N S
+.fullLengthFormInput {
+  @include input(var(--application-background-color), var(--regular-text-color));
+
+  width: 100%;
+  height: var(--input-height);
+  padding-inline: 10px;
+
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  input {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+
+    border: none;
+  }
+}
+
+
+//   D I F F E R E N T   S T A T E S   O F   B U T T O N S
+.loading {
+  font-size: 0;
+  
+}

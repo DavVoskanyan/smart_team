@@ -1,0 +1,71 @@
+@font-face {
+	font-family: "Public Sans";
+	src: url('/fonts/public_sans/PublicSans-VariableFont_wght.ttf')  format('truetype');
+}
+
+:root {
+	//margin, paddings and gaps
+	
+	--main-layout-padding: 15px;
+	
+
+	//sizing
+	
+	--input-height: 38px;
+	
+	
+//	colors
+	--color-light-1: rgba(80, 68, 229, 1);
+	--color-ligh-1-interacted: color-mix(in srgb, var(--color-light-1) 80%, transparent 20%);
+
+	--color-light-2: rgba(243, 243, 248, 1);
+	--color-ligh-2-interacted: color-mix(in srgb, var(--color-light-2) 80%, transparent 20%);
+
+	--color-light-3: rgba(254, 254, 255, 1);
+	--color-ligh-3-interacted: color-mix(in srgb, var(--color-light-3) 80%, transparent 20%);
+
+	--color-light-4: rgba(23, 23, 24, 1);
+	--color-ligh-4-interacted: color-mix(in srgb, var(--color-light-4) 80%, transparent 20%);
+
+
+	--color-dark-1: rgba(80, 68, 229, 1);
+	--color-dark-1-interacted: color-mix(in srgb, var(--color-dark-1) 80%, transparent 20%);
+
+	--color-dark-2: rgba(33, 33, 51, 1);
+	--color-dark-2-interacted: color-mix(in srgb, var(--color-dark-2) 80%, transparent 20%);
+
+	--color-dark-3: rgba(24, 24, 41, 1);
+	--color-dark-3-interacted: color-mix(in srgb, var(--color-dark-3) 80%, transparent 20%);
+
+	--color-dark-4: rgba(227, 227, 241, 1);
+	--color-dark-4-interacted: color-mix(in srgb, var(--color-dark-4) 80%, transparent 20%);
+	
+
+//	spacing
+	--spacing-1: 3px;
+	--spacing-2: 5px;
+	--spacing-3: 8px;
+	--spacing-4: 10px;
+	--spacing-5: 13px;
+	--spacing-6: 15px;
+	--spacing-7: 18px;
+	--spacing-8: 20px;
+	--spacing-9: 23px;
+	--spacing-10: 25px;
+
+	//transition durations
+	--transition-duration-1: 120ms;
+	--transition-duration-2: 300ms;
+}
+.dark {
+	--application-main-color: var(--color-dark-1);
+	--application-background-color: var(--color-dark-2);
+	--application-elements-background-color: var(--color-dark-3);
+	--regular-text-color: var(--color-dark-4);
+}
+.light {
+	--application-main-color: var(--color-light-1);
+	--application-background-color: var(--color-light-2);
+	--application-elements-background-color: var(--color-light-3);
+	--regular-text-color: var(--color-light-4);
+}
