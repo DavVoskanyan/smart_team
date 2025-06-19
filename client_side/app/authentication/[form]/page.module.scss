@@ -1,0 +1,32 @@
+.main {
+    width: 100%;
+    height: 100%;
+    
+    display: grid;
+    place-items: center;
+}
+.loginContainer {
+    width: 60%;
+    height: auto;
+    
+    background-color: var(--application-elements-background-color);
+
+    border-radius: var(--spacing-4);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.formContainer {
+    width: 50%;
+    height: 100%;
+    padding: var(--main-layout-padding)
+}
+.loginImagePlaceholder {
+    width: 50%;
+    height: 80%;
+    object-fit: cover;
+
+    overflow: hidden;
+}

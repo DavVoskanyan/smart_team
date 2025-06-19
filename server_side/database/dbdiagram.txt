@@ -1,0 +1,302 @@
+Table users {
+  id integer [primary key]
+  first_name varchar
+  last_name varchar
+  is_verified boolean
+  email varchar unique
+  is_email_verified boolean
+  password varchar
+  phone varchar
+  address varchar
+  birthdate date
+  profile_image_file varchar
+  color_id integer
+  theme_id integer
+  description text
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table user_online_activity {
+  id integer [primary key]
+  user_id integer
+  is_online boolean
+  last_online_date date
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table spaces {
+  id integer [primary key]
+  name varchar
+  owner_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table roles {
+  id integer [primary key]
+  name varchar
+  space_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table role_permissions {
+  id integer [primary key]
+  role_id integer
+  // ...permissions
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table space_invitations {
+  id integer [primary key]
+  user_id integer
+  space_id integer
+  inviter_id integer
+  expiration_date date
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table colors {
+  id integer [primary key]
+  red integer
+  green integer
+  blue integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table themes {
+  id integer [primary key]
+  name varchar
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table interests {
+  id integer [primary key]
+  name varchar
+  user_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table characteristics {
+  id integer [primary key]
+  name varchar
+  user_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table notifications {
+  id integer [primary key]
+  title varchar
+  text text
+  type_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table notification_types {
+  id integer [primary key]
+  title varchar
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+
+Table posts {
+  id integer [primary key]
+  text text
+  space_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table post_attached_images {
+  id integer [primary key]
+  post_id integer
+  image_name string
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table post_likes {
+  id integer [primary key]
+  post_id integer
+  user_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table post_comments {
+  id integer [primary key]
+  post_id integer
+  user_id integer
+  text text
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table chats {
+  id integer
+  chat_type_id integer
+  name string
+  creator_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table chat_types {
+  // personal-chat, group-chat
+  id integer
+  name string
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table messages {
+  id integer
+  sender_id integer
+  chat_id integer
+  text text
+  is_response boolean
+  response_to_message_id integer
+  is_forwarded boolean
+  forwarded_from_chat_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table message_attached_files {
+  message_id integer
+  attached_file varchar
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table message_reactions {
+  message_id integer
+  user_id integer
+  reaction_type_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table reaction_types {
+  id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+
+//relation tables
+Table users_and_spaces_relation {
+  id integer [primary key]
+  user_id integer
+  space_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table users_and_roles_relation {
+  id integer [primary key]
+  user_id integer
+  role_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table users_and_notifications_relation {
+  id integer [primary key]
+  user_id integer
+  notification_id integer
+  notification_seen_date date
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+Table users_and_chats_relation {
+  id integer
+  user_id integer
+  chat_id integer
+  creation_date date
+  modification_date date
+  is_deleted boolean
+  deletion_date date
+}
+
+
+//relations
+Ref: users.id < space_invitations.user_id
+Ref: users.id < space_invitations.inviter_id
+Ref: users.id < spaces.owner_id
+Ref: users.id < interests.user_id
+Ref: users.id < characteristics.user_id
+Ref: users.id - user_online_activity.user_id
+
+Ref: themes.id < users.theme_id
+Ref: colors.id < users.color_id
+
+Ref: spaces.id < roles.space_id
+Ref: spaces.id < space_invitations.space_id
+Ref: roles.id - role_permissions.role_id
+
+Ref: users.id <> users_and_spaces_relation.user_id
+Ref: spaces.id <> users_and_spaces_relation.space_id
+Ref: users.id <> users_and_roles_relation.user_id
+Ref: roles.id <> users_and_roles_relation.role_id
+Ref: users.id <> users_and_notifications_relation.user_id
+Ref: notifications.id <> users_and_notifications_relation.notification_id
+
+Ref: users.id <> users_and_chats_relation.user_id
+Ref: chats.id <> users_and_chats_relation.chat_id
+Ref: chat_types.id < chats.chat_type_id
+Ref: chats.id < messages.chat_id
+Ref: chats.id < messages.forwarded_from_chat_id
+Ref: messages.id < message_reactions.message_id
+Ref: messages.id < messages.response_to_message_id
+Ref: users.id < chats.creator_id
+Ref: users.id < message_reactions.user_id
+Ref: reaction_types.id < message_reactions.reaction_type_id
+Ref: users.id < messages.sender_id
+Ref: messages.id < message_attached_files.message_id
+
+Ref: notifications.type_id > notification_types.id
+
+Ref: spaces.id < posts.space_id
+Ref: posts.id < post_attached_images.post_id
+Ref: posts.id < post_likes.post_id
+Ref: posts.id < post_comments.post_id
+
+Ref: users.id < post_likes.user_id
+Ref: users.id < post_comments.user_id

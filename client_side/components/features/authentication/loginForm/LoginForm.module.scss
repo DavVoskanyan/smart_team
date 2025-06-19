@@ -1,0 +1,22 @@
+#loginForm {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-4);
+}
+.forgotPasswordLink {
+	margin-top: var(--gap-1);
+	align-self: flex-end;
+
+	color: color-mix(in srgb, var(--regular-text-color) 70%, transparent 30%);
+
+	text-decoration: none;
+
+	cursor: pointer;
+	transition-duration: var(--transition-duration-1);
+}
+.forgotPasswordLink:hover { text-decoration: underline; }

@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "team",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "migrations": "database/",
+    "seeders": "database/"
+  },
+  "test": {
+    "username": "team",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "team",
+    "password": "pass",
+    "database": "smart_team_database",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

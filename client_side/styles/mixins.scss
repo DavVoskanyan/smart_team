@@ -1,0 +1,40 @@
+@mixin button($background-color, $text-color) {
+  scale: 1 1;
+
+  background-color: $background-color;
+  border: none;
+
+  color: $text-color;
+  text-align: center;
+
+  user-select: none;
+  transition-duration: var(--transition-duration-1);
+  cursor: pointer;
+
+  &:hover {
+    scale: 1.03 1.03;
+    background-color: color-mix(in srgb, $background-color 80%, transparent 20%);
+  }
+  &:active {
+    scale: 0.95 0.95;
+  }
+}
+
+@mixin input($background-color, $text-color) {
+  scale: 1 1;
+
+  background-color: $background-color;
+
+  border: none;
+
+  outline: 1px solid transparent;
+
+  color: $text-color;
+  transition-duration: var(--transition-duration-1);
+
+
+  &:focus-within {
+    scale: 1.03 1.03;
+    outline-color: var(--application-main-color);
+  }
+}

@@ -1,0 +1,17 @@
+import React from 'react';
+
+import moduleStyles from './ForgotEmailInput.module.scss';
+
+
+const ForgotEmailInput: React.FC = () => {
+    return (
+        <div className={moduleStyles.filedContainer}>
+            <span className={moduleStyles.fieldTitle}>Email or Username</span>
+            <label className={moduleStyles.emailInputContainer}>
+                <input type="text" tabIndex={1}/>
+            </label>
+        </div>
+    );
+};
+
+export default ForgotEmailInput;

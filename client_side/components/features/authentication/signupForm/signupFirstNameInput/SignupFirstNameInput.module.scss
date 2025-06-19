@@ -1,0 +1,38 @@
+.fieldContainer {
+  width: 100%;
+  margin-top: var(--gap-5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.fieldTitle {
+
+}
+.firstNameInputContainer {
+  width: 100%;
+  height: var(--input-height);
+  padding-inline: 10px;
+
+  background-color: var(--application-background-color);
+
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  transition-duration: var(--transition-duration-1);
+
+
+  input {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+
+    border: none;
+  }
+}
