@@ -1,16 +1,13 @@
-# Use the official Node.js image as the base image
-FROM node:latest
+FROM node:20
 
-# Mention work directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
-# Install project dependencies
 RUN npm install
 
 COPY . .
 
-# Command to start the Next.js application
+EXPOSE 3000
+
 CMD ["npm", "run", "dev"]

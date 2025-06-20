@@ -9,6 +9,9 @@ import moduleStyles from './LoginForm.module.scss';
 
 
 const LoginForm: React.FC = () => {
+
+    fetch(`${process.env.NEXT_PUBLIC_SERVERSIDE_URL}/hello`);
+
   return (
     <form id={moduleStyles.loginForm}>
       <LoginEmailInput/>

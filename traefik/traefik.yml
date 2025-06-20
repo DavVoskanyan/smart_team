@@ -1,4 +1,6 @@
-# traefik/traefik.yml
+api:
+  dashboard: true
+
 entryPoints:
   web:
     address: ":80"
@@ -6,6 +8,4 @@ entryPoints:
 providers:
   docker:
     exposedByDefault: false
-
-api:
-  dashboard: true
+    defaultRule: "Host(`{{ .Name }}.dev.local`)"

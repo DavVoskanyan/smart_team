@@ -8,7 +8,7 @@ services:
       context: client_side
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.client_side.rule=Host(`smartteam.local`)"
+      - "traefik.http.routers.client_side.rule=Host(`client.dev.local`)"
       - "traefik.http.services.client_side.loadbalancer.server.port=3000"
     volumes:
       - ./client_side/:/app
@@ -22,7 +22,7 @@ services:
       context: ./server_side
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.server_side.rule=Host(`smartteam.api.local`)"
+      - "traefik.http.routers.server_side.rule=Host(`server.dev.local`)"
       - "traefik.http.services.server_side.loadbalancer.server.port=3000"
     networks:
       - smart_team_network
@@ -42,7 +42,8 @@ services:
     networks:
       - smart_team_network
 
-  traefik:
+  smart_team_traefik:
+    container_name: smart_team_traefik
     image: traefik:v3.0
     command:
       - --api.dashboard=true
