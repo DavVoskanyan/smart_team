@@ -24,6 +24,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.server_side.rule=Host(`server.dev.local`)"
       - "traefik.http.services.server_side.loadbalancer.server.port=3000"
+    volumes:
+      - ./server_side/:/app
     networks:
       - smart_team_network
 

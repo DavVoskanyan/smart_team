@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    allowedDevOrigins: ['smartteam.local', 'smartteam.api.local'],
+    allowedDevOrigins: [
+        'http://client.dev.local',
+        'http://server.dev.local'
+    ],
     async rewrites() {
         return [
             {
