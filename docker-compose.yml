@@ -1,37 +1,34 @@
-version: '1.0'
+version: '3.8'
 services:
 
-  # Frontend service
-  smart_team_clientside:
-    container_name: smart_team_clientside
+  clientside:
+    container_name: clientside
     build:
       context: client_side
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.client_side.rule=Host(`client.dev.local`)"
-      - "traefik.http.services.client_side.loadbalancer.server.port=3000"
+      - traefik.enable=true
+      - traefik.http.routers.client_side.rule=Host(`client.dev.local`)
+      - traefik.http.services.client_side.loadbalancer.server.port=3000
     volumes:
       - ./client_side/:/app
     networks:
       - smart_team_network
 
-  # Backend service
-  smart_team_serverside:
-    container_name: smart_team_serverside
+  serverside:
+    container_name: serverside
     build:
       context: ./server_side
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.server_side.rule=Host(`server.dev.local`)"
-      - "traefik.http.services.server_side.loadbalancer.server.port=3000"
+      - traefik.enable=true
+      - traefik.http.routers.server_side.rule=Host(`server.dev.local`)
+      - traefik.http.services.server_side.loadbalancer.server.port=3000
     volumes:
       - ./server_side/:/app
     networks:
       - smart_team_network
 
-  # Postgres database
-  smart_team_database:
-    container_name: smart_team_database
+  database:
+    container_name: database
     image: postgres:latest
     environment:
       POSTGRES_USER: team
@@ -44,8 +41,8 @@ services:
     networks:
       - smart_team_network
 
-  smart_team_traefik:
-    container_name: smart_team_traefik
+  traefik:
+    container_name: traefik
     image: traefik:v3.0
     command:
       - --api.dashboard=true
